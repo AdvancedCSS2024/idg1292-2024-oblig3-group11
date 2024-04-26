@@ -2,33 +2,33 @@
 <svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.49 47.95">
   <defs>
     <style>
-      .cls-1 {
-        fill: #64b4f6;
-      }
+.cls-1 {
+    fill: #80bef1;
+  }
 
-      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
-        stroke-width: 0px;
-      }
+  .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6 {
+    stroke-width: 0px;
+  }
 
-      .cls-2 {
-        fill: #1a1a1a;
-      }
+  .cls-2 {
+    fill: #1a1a1a;
+  }
 
-      .cls-3 {
-        fill: #90c9f8;
-      }
+  .cls-3 {
+    fill: #9cd3fd;
+  }
 
-      .cls-4 {
-        fill: #358d3e;
-      }
+  .cls-4 {
+    fill: #658d61;
+  }
 
-      .cls-5 {
-        fill: #333;
-      }
+  .cls-5 {
+    fill: #333;
+  }
 
-      .cls-6 {
-        fill: #2c7c33;
-      }
+  .cls-6 {
+    fill: #50764c;
+  }
     </style>
   </defs>
   <g id="fish-pond">
