@@ -2,8 +2,6 @@
 
 //TORIL
 //Text boxes
-
-
 document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", function() {
         const scrollTop = window.scrollY;
@@ -82,5 +80,4 @@ function addImagesToGrass() {
     grassBox.appendChild(image2);
     grassBox.appendChild(image3);
 }
-
 //TORIL
