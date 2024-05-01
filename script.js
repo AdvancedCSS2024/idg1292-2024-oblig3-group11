@@ -74,16 +74,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-window.addEventListener("scroll", function() {
-const scrollFrog = document.querySelector(".section3__frog"); //Change to correct placement
-        if (window.scrollY < 500) {
-            scrollFrog.classList.add("show");
-        } else {
-            scrollFrog.classList.remove("show");
-        }
-
-});
-
 //Action button
 window.addEventListener("scroll", function() {
     const scrollButton = document.querySelector(".action-button");

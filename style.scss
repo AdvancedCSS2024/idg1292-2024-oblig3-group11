@@ -211,37 +211,37 @@
     background-color: skyblue;
     color: rgb(68, 67, 67);
     font-size: 20px;
-    &__frog {
-        display: inline-block;
-        position: absolute;
-        width: 200px;
-        height: auto;
-        top: 40px;
-        left: 700px;
-
-        // @mixin warning-box {
-        //     visibility: visible;
-        // }
-        
-        // &:hover {
-        //     transform: translateX(200px);
-        //     @include warning-box;
-        // }
-
-        // &:hover {
-        //     transform: translateX(200px); /* Move frog 100px to the right on hover */
-
-        //     .warning-box {
-        //         visibility: visible; /* Show warning box when frog is hovered over */
-        //     }
-        // }
-    }
     &__grass-container {
         position: sticky;
         bottom: 0;
         width: 100%;
         height: 50vh; // Adjust the height as needed
         background-color: rgb(129, 127, 8); // Initial color
+        &__frog {
+            display: inline-block;
+            position: absolute;
+            width: 200px;
+            height: auto;
+            top: 40px;
+            left: 700px;
+    
+            // @mixin warning-box {
+            //     visibility: visible;
+            // }
+            
+            // &:hover {
+            //     transform: translateX(200px);
+            //     @include warning-box;
+            // }
+    
+            &:hover {
+                 transform: translateX(200px); /* Move frog 100px to the right on hover */
+    
+                 +.warning-box {
+                     visibility: visible; /* Show warning box when frog is hovered over */
+                 }
+             }
+        }
     }
     &__house {
         display: inline-block;
