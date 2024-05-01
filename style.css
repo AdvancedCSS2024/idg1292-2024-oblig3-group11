@@ -1,1 +1,63 @@
-/*# sourceMappingURL=style.css.map */
+.section1 {
+  min-height: 70vh;
+  /*&__frame2 {
+
+  }*/
+  /* &__frame4 {
+
+  }*/
+}
+.section1__frame1 {
+  position: relative;
+}
+.section1__frame1 h2 {
+  position: absolute;
+  text-align: center;
+}
+.section1__frame1 #frog {
+  position: absolute;
+  width: 25vw;
+  left: 35vw;
+  top: 15vw;
+  z-index: 1;
+}
+.section1__frame1 .pond-leaf {
+  position: absolute;
+  width: 29vw;
+  left: 33vw;
+  top: 23vw;
+}
+.section1__frame3 img.pond {
+  position: absolute;
+  z-index: -1;
+}
+
+/*
+.section2 {
+    &__frame1 {
+        position: relative;
+        height: 100vh;
+
+        #shocked-frog {
+            width: 10vw;
+            position: absolute;
+            left: 21vw;
+            top: 26vw;
+            z-index: 1;
+        }
+
+        .pond-leaf {
+            width: 12vw;
+            position: absolute;
+            left: 20vw;
+            top: 29vw;
+            z-index: 0;
+        }
+
+        .pond {
+            width: 60vw;
+            position: absolute;
+            top: 15vw;
+            z-index: -1;
+        }
+    } *//*# sourceMappingURL=style.css.map */
