@@ -1,4 +1,44 @@
 
+.section2 {
+    &__frame1 {
+        position: relative;
+        height: 100vh;
+        
+        #shocked-frog {
+            width: 10vw;
+            position: absolute;
+            left: 21vw;
+            top: 26vw;
+            z-index: 1;
+        }
+
+        .pond-leaf {
+            width: 12vw;
+            position: absolute;
+            left: 20vw;
+            top: 29vw;
+            z-index: 0;
+        }
+
+        .pond {
+            width: 60vw;
+            position: absolute;
+            top: 15vw;
+            z-index: -1;
+        }
+    }
+
+//     &__frame2 {
+//     }
+
+//     &__frame3 {
+//     }
+
+//     &__frame4 {
+//     }
+}
+
+
 //TORIL
 .section3__body {
     display: flex;
@@ -76,7 +116,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-}
+
 
 .action-button.show {
     display: block;
