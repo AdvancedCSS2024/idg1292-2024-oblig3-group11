@@ -1,17 +1,48 @@
-// .section1 {
-//     &__frame1 {
-//     }
+.section1 {
+    min-height: 70vh;
 
-//     &__frame2 {
-//     }
+    &__frame1 {
+        position: relative;
 
-//     &__frame3 {
-//     }
+        h2 {
+            position: fixed;
+            text-align: center;
+        }
 
-//     &__frame4 {
-//     }
-// }
+        #frog {
+            position: absolute;
+            width: 25vw;
+            left: 35vw;
+            top: 15vw;
+            z-index: 1;
+        }
 
+        .pond-leaf {
+            position: absolute;
+            width: 29vw;
+            left: 33vw;
+            top: 23vw;
+        }
+    }
+
+     &__frame2 {
+
+    }
+
+     &__frame3 {
+
+        img.pond {
+            position:absolute;
+            z-index: -1;
+        }
+
+    }
+
+     &__frame4 {
+    }
+}
+
+/*
 .section2 {
     &__frame1 {
         position: relative;
@@ -39,7 +70,7 @@
             top: 15vw;
             z-index: -1;
         }
-    }
+    } */
 
 //     &__frame2 {
 //     }
@@ -49,7 +80,7 @@
 
 //     &__frame4 {
 //     }
-}
+// }
 
 // .section3 {
 //     &__frame1 {
