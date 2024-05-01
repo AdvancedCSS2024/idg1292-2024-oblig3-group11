@@ -4,19 +4,19 @@
     padding: 0;
 }
 
-// .section1 {
-//     &__frame1 {
-//     }
+.section1 {
+    &__frame1 {
+    }
 
-//     &__frame2 {
-//     }
+    &__frame2 {
+    }
 
-//     &__frame3 {
-//     }
+    &__frame3 {
+    }
 
-//     &__frame4 {
-//     }
-// }
+    &__frame4 {
+    }
+}
 
 .section2 {
     &__frame1 {
@@ -75,31 +75,92 @@
         .frog {
             max-width: 10%;
             position: absolute;
-            top: 15vw;
-            z-index: -1;
+            left: 21vw;
+            top: 21vw;
+            z-index: 3;
+            animation:
+                bounce 1.5s,
+                escape 1s forwards;
+            animation-delay: 0.5s, 4s;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0%);
+            }
+            5% {
+                transform: translateY(-80%);
+            }
+            15% {
+                transform: translate(0%);
+            }
+        }
+
+        @keyframes escape {
+            50% {
+                transform: translateY(-80%) translateX(30vw);
+            }
+
+            100% {
+                transform: translateX(50vw);
+            }
         }
     }
 
-//     &__frame2 {
-//     }
+    // ANIMATIONS
 
-    //     &__frame3 {
-    //     }
+    .animate-on-scroll-heading {
+        opacity: 0;
+        transform: translateX(0);
+        transition: 1s;
+        transition-delay: 0s;
+    }
 
-//     &__frame4 {
-//     }
+    .animate-on-scroll-pond {
+        opacity: 0;
+        transform: translate(0);
+        transition: 1.5s;
+        transition-delay: 0.5s;
+    }
+
+    .animate-on-scroll-leaf {
+        opacity: 0;
+        transform: translate(0);
+        transition: 1.5s;
+        transition-delay: 0.5s;
+    }
+
+    .animate-on-scroll-road {
+        opacity: 0;
+        transform: translate(0);
+        transition: 1.5s;
+        transition-delay: 2s;
+    }
+
+    .animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .emphasized-text {
+        font-weight: bold;
+        color: rgb(235, 94, 94);
+        text-shadow: 2px 2px 2px gray;
+        font-style: normal;
+    }
+
+    &__frame2 {
+    }
+
+    &__frame3 {
+    }
+
+    &__frame4 {
+    }
 }
 
-
-//TORIL
-.section3__body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure full viewport height */
-    background-color: skyblue;
-    color: rgb(68, 67, 67);
-	font-size: 20px;
-}
+// TORIL
 
 .grass-container {
     position: fixed;
@@ -110,6 +171,12 @@
 }
 
 .section3 {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full viewport height */
+    background-color: skyblue;
+    color: rgb(68, 67, 67);
+    font-size: 20px;
     &__frog {
         display: inline-block;
         position: fixed;
@@ -117,8 +184,25 @@
         height: auto;
         top: 400px;
         left: 700px;
+
+        // @mixin warning-box {
+        //     visibility: visible;
+        // }
+        
+        // &:hover {
+        //     transform: translateX(200px);
+        //     @include warning-box;
+        // }
+
+        // &:hover {
+        //     transform: translateX(200px); /* Move frog 100px to the right on hover */
+
+        //     .warning-box {
+        //         visibility: visible; /* Show warning box when frog is hovered over */
+        //     }
+        // }
     }
-    .grass-container {
+    &__grass-container {
         position: relative;
         width: 100%;
         height: 400px;
@@ -131,17 +215,6 @@
     }
 }
 
-.section3__frog.show{
-    display: block;
-}
-    .grass-container.show {
-    display: block;
-}
-
-.section3__frog:hover {
-    transform: translateX(200px); /* Move frog 100px to the right on hover */
-}
-
 .warning-box {
     position: absolute;
     top: -150px; /* Adjust distance from frog */
@@ -152,10 +225,6 @@
     border-radius: 5px;
     visibility: hidden; /* Initially hidden */
     transition: visibility 0.3s ease; /* Add transition for smooth appearance */
-}
-
-.section3__frog:hover + .warning-box {
-    visibility: visible; /* Show warning box when frog is hovered over */
 }
 
 .action-button {
@@ -197,7 +266,4 @@
     align-items: center;
     height: 100vh;
 }
-//TORIL
-
-
-
+// TORIL

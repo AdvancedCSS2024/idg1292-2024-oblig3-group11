@@ -1,3 +1,5 @@
+// KAJA
+
 const animatedElements = document.querySelectorAll('.animate-on-scroll-heading, .animate-on-scroll-road, .animate-on-scroll-pond, .animate-on-scroll-leaf');
 
 const observer = new IntersectionObserver((entries) => {

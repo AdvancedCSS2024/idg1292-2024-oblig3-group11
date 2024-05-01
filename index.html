@@ -10,7 +10,6 @@
 </head>
 
 <body>
-  <main>
     <section class="section1">
         <div class="section1__frame1"></div>
         <div class="section1__frame2"></div>
@@ -28,20 +27,13 @@
             <img class="pond animate-on-scroll-pond" src="assets/SVG/pond.svg" alt="pond">
             <img class="road animate-on-scroll-road" src="assets/SVG/road.svg" alt="A road">
         </div>
-    
+        <div class="section2__frame2"></div>
         <div class="section2__frame3"></div>
         <div class="section2__frame4"></div>
     </section>
-
-    <section class="section3">
-        <div class="section3__frame1"></div>
-        <div class="section3__frame2"></div>
-        <div class="section3__frame3"></div>
-        <div class="section3__frame4"></div>
-    </section>
     
     <!--TORIL-->
-    <section class="section3__body">
+    <section class="section3">
       <div class="section3__text1 scroll--one" data-hidden="hidden__scroll">
         <p>Do <em>not move</em> or <em>frogs</em>, they are sensitive</p>
         <p>(Try moving the pointer to the frog)</p>
@@ -57,24 +49,25 @@
         <p>They are known to kill not only frogs, but also other small animals that are essential to our ecosystem</p>
       </div>
 
-    <!--House outside of the footer so it is palced on the grass-->
+    <!-- House outside of the footer so it is palced on the grass -->
       <svg class="section3__house" width="300" height="450">
         <rect x="20" y="200" width="275" height="250" style="fill: red;"/>  
         <polygon points="165,115,300,200,15,200" fill="grey"/>  
       </svg>
       <div style="height: 1800px;"></div>
 
-      <section3__grass-container class="grass-container">
-        <img class="section3__frog" src="assets/SVG/frog.svg"><!-- Inserted as img because it's going to be static -->
-        <div class="warning-box">Don't touch or move frogs!</div>
+      <section class="section3__grass-container">
+        <img class="section3__frog" src="assets/SVG/frog.svg"><!-- Inserted as img because it's going to be static-->
+        <div class="warning-box">Don't touch or move frogs!</div> 
         <button class="action-button" onclick="addImagesToGrass()">Click to add rocks, logs, leavs and the pond</button>  
           <svg width="1680" height="1100">              
           </svg>
-      </section3__grass-container>
+      </section>
   </section>
 
-</main>
+
 <!--TORIL-->
+
 </body>
 
 </html>
