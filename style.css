@@ -1,0 +1,129 @@
+.section2__frame1 {
+  position: relative;
+  height: 100vh;
+}
+.section2__frame1 #shocked-frog {
+  width: 10vw;
+  position: absolute;
+  left: 21vw;
+  top: 26vw;
+  z-index: 1;
+}
+.section2__frame1 .pond-leaf {
+  width: 12vw;
+  position: absolute;
+  left: 20vw;
+  top: 29vw;
+  z-index: 0;
+}
+.section2__frame1 .pond {
+  width: 60vw;
+  position: absolute;
+  top: 15vw;
+  z-index: -1;
+}
+
+.section3__body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+  background-color: skyblue;
+  color: rgb(68, 67, 67);
+  font-size: 20px;
+}
+
+.grass-container {
+  position: fixed;
+  bottom: 0;
+  height: 500px;
+  width: 100%;
+  background-color: rgb(129, 127, 8); /* Initial color */
+}
+
+.section3__frog {
+  display: inline-block;
+  position: fixed;
+  width: 200px;
+  height: auto;
+  top: 400px;
+  left: 700px;
+}
+.section3 .grass-container {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: rgb(129, 127, 8);
+}
+.section3__house {
+  display: inline-block;
+  position: fixed;
+  top: 0px;
+}
+
+.section3__frog.show {
+  display: block;
+}
+
+.grass-container.show {
+  display: block;
+}
+
+.section3__frog:hover {
+  transform: translateX(200px); /* Move frog 100px to the right on hover */
+}
+
+.warning-box {
+  position: absolute;
+  top: -150px; /* Adjust distance from frog */
+  left: 1000px;
+  background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  visibility: hidden; /* Initially hidden */
+  transition: visibility 0.3s ease; /* Add transition for smooth appearance */
+}
+
+.section3__frog:hover + .warning-box {
+  visibility: visible; /* Show warning box when frog is hovered over */
+}
+
+.action-button {
+  display: none;
+  position: fixed;
+  bottom: 750px;
+  right: 300px;
+  background-color: rgb(219, 139, 41);
+  padding: 20px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.action-button.show {
+  display: block;
+}
+
+.section3__text1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.section3__text2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.section3__text3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}/*# sourceMappingURL=style.css.map */
