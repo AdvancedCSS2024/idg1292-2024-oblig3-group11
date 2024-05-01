@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 // .section1 {
 //     &__frame1 {
 //     }
@@ -14,41 +20,157 @@
 
 .section2 {
     &__frame1 {
-        position: relative;
         height: 100vh;
-        
-        #shocked-frog {
-            width: 10vw;
-            position: absolute;
-            left: 21vw;
-            top: 26vw;
-            z-index: 1;
-        }
+        position: relative;
 
-        .pond-leaf {
-            width: 12vw;
+        &__heading {
+            font-family: sans-serif;
+            font-size: 2.5vw;
+            letter-spacing: 0.1vw;
             position: absolute;
-            left: 20vw;
-            top: 29vw;
-            z-index: 0;
+            right: 5vw;
+            padding-top: 5%;
+            z-index: 5;
         }
 
         .pond {
-            width: 60vw;
+            width: 45vw;
             position: absolute;
+            left: 10vw;
             top: 15vw;
             z-index: -1;
+            animation: sucked-in 1s forwards;
+            animation-delay: 4s;
+            animation-iteration-count: 1;
+        }
+
+        .pond-leaf {
+            max-width: 12vw;
+            position: absolute;
+            left: 20vw;
+            top: 24vw;
+            z-index: 0;
+            animation: sucked-in 0.5 forwards;
+            animation-delay: 4s;
+            animation-iteration-count: 1;
+        }
+
+        @keyframes sucked-in {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(0);
+            }
+        }
+
+        .road {
+            height: 100vh;
+            position: absolute;
+            left: 2vw;
+            z-index: 2;
+        }
+
+        .frog {
+            max-width: 10%;
+            position: absolute;
+            left: 21vw;
+            top: 21vw;
+            z-index: 3;
+            animation:
+                bounce 1.5s,
+                escape 1s forwards;
+            animation-delay: 0.5s, 4s;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0%);
+            }
+            5% {
+                transform: translateY(-80%);
+            }
+            15% {
+                transform: translate(0%);
+            }
+        }
+
+        @keyframes escape {
+            50% {
+                transform: translateY(-80%) translateX(30vw);
+            }
+
+            100% {
+                transform: translateX(50vw);
+            }
         }
     }
 
-//     &__frame2 {
-//     }
+    // ANIMATIONS
 
-//     &__frame3 {
-//     }
+    .animate-on-scroll-heading {
+        opacity: 0;
+        transform: translateX(0);
+        transition: 1s;
+        transition-delay: 0s;
+    }
 
-//     &__frame4 {
-//     }
+    .animate-on-scroll-pond {
+        opacity: 0;
+        transform: translate(0);
+        transition: 1.5s;
+        transition-delay: 0.5s;
+    }
+
+    .animate-on-scroll-leaf {
+        opacity: 0;
+        transform: translate(0);
+        transition: 1.5s;
+        transition-delay: 0.5s;
+    }
+
+    .animate-on-scroll-road {
+        opacity: 0;
+        transform: translate(0);
+        transition: 1.5s;
+        transition-delay: 2s;
+    }
+
+    .animate {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .emphasized-text {
+        font-weight: bold;
+        color: rgb(235, 94, 94);
+        text-shadow: 2px 2px 2px gray;
+        font-style: normal;
+    }
+
+    // &__frame2 {
+    //     position: relative;
+
+    //     &__heading {
+    //         font-family: sans-serif;
+    //         font-size: 3em;
+    //         position: absolute;
+    //         z-index: 1;
+    //     }
+
+    // &__animation {
+    //     position: absolute;
+
+    // }
+
+    //     &__frame3 {
+    //     }
+
+    //     &__frame4 {
+
+    // }
 }
 
 // .section3 {
