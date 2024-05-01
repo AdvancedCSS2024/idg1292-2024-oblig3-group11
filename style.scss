@@ -197,11 +197,11 @@
 // TORIL
 
 .grass-container {
-    position: absolute;
+    position: sticky;
     bottom: 0;
-    height: 500px;
     width: 100%;
-    background-color: rgb(129, 127, 8); /* Initial color */
+    height: 50vh; // Adjust the height as needed
+    background-color: rgb(129, 127, 8); // Initial color
 }
 
 .section3 {
@@ -216,7 +216,7 @@
         position: absolute;
         width: 200px;
         height: auto;
-        top: 400px;
+        top: 40px;
         left: 700px;
 
         // @mixin warning-box {
@@ -237,15 +237,17 @@
         // }
     }
     &__grass-container {
-        position: relative;
+        position: sticky;
+        bottom: 0;
         width: 100%;
-        height: 400px;
-        background-color: rgb(129, 127, 8); //Initial color
+        height: 50vh; // Adjust the height as needed
+        background-color: rgb(129, 127, 8); // Initial color
     }
     &__house {
         display: inline-block;
-        position: relative;
-        top: 0px;
+        position: sticky;
+        bottom: 465px;
+        z-index: 1;
     }
 }
 
@@ -264,8 +266,8 @@
 .action-button {
     display: none;
     position: fixed;
-    bottom: 750px;
-    right: 300px;
+    bottom: 700px;
+    right: 150px;
     background-color: rgb(219, 139, 41);
     padding: 20px 20px;
     border: none;

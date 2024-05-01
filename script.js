@@ -87,7 +87,7 @@ const scrollFrog = document.querySelector(".section3__frog"); //Change to correc
 //Action button
 window.addEventListener("scroll", function() {
     const scrollButton = document.querySelector(".action-button");
-    if (window.scrollY > 500 && window.scrollY < 1000) {
+    if (window.scrollY > 3100 && window.scrollY < 3200) {
         scrollButton.classList.add("show");
     } else {
         scrollButton.classList.remove("show");
