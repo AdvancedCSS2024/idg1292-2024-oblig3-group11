@@ -17,7 +17,7 @@
 
         #frog {
             position: absolute;
-            width: 25vw;
+            width: 10vw;
             left: 35vw;
             top: 15vw;
             z-index: 1;
@@ -25,7 +25,7 @@
 
         .pond-leaf {
             position: absolute;
-            width: 29vw;
+            width: 10vw;
             left: 33vw;
             top: 23vw;
         }
@@ -40,6 +40,7 @@
         img.pond {
             position:absolute;
             z-index: -1;
+            width: 40vw;
         }
 
     }
@@ -97,9 +98,9 @@
         }
 
         .road {
-            height: 100vh;
+            height: 85vh;
             position: absolute;
-            left: 2vw;
+            left: 5vw;
             z-index: 2;
         }
 
@@ -196,7 +197,7 @@
 // TORIL
 
 .grass-container {
-    position: fixed;
+    position: absolute;
     bottom: 0;
     height: 500px;
     width: 100%;
@@ -212,7 +213,7 @@
     font-size: 20px;
     &__frog {
         display: inline-block;
-        position: fixed;
+        position: absolute;
         width: 200px;
         height: auto;
         top: 400px;
@@ -243,7 +244,7 @@
     }
     &__house {
         display: inline-block;
-        position: fixed;
+        position: relative;
         top: 0px;
     }
 }
