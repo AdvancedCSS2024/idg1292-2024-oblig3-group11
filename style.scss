@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+#main-frog {
+    width: 15vw;
+    position: sticky;
+    z-index: 5;
+}
+
 .section1 {
     min-height: 100vh;
 
@@ -15,13 +21,13 @@
             text-align: center;
         }
 
-        #frog {
-            position: absolute;
-            width: 10vw;
-            left: 35vw;
-            top: 15vw;
-            z-index: 1;
-        }
+        // #frog {
+        //     position: absolute;
+        //     width: 10vw;
+        //     left: 35vw;
+        //     top: 15vw;
+        //     z-index: 1;
+        // }
 
         .pond-leaf {
             position: absolute;
@@ -104,19 +110,19 @@
             z-index: 2;
         }
 
-        .frog {
-            max-width: 10%;
-            position: absolute;
-            top: 15vw;
+        // .frog {
+        //     max-width: 10%;
+        //     position: absolute;
+        //     top: 15vw;
            
-            left: 21vw;
-            top: 21vw;
-            z-index: 3;
-            animation:
-                bounce 1.5s,
-                escape 1s forwards;
-            animation-delay: 0.5s, 4s;
-        }
+        //     left: 21vw;
+        //     top: 21vw;
+        //     z-index: 3;
+        //     animation:
+        //         bounce 1.5s,
+        //         escape 1s forwards;
+        //     animation-delay: 0.5s, 4s;
+        // }
 
         @keyframes bounce {
             0%,
@@ -211,13 +217,13 @@
     background-color: skyblue;
     color: rgb(68, 67, 67);
     font-size: 20px;
-    &__frog {
-        display: inline-block;
-        position: absolute;
-        width: 200px;
-        height: auto;
-        top: 400px;
-        left: 700px;
+    // &__frog {
+    //     display: inline-block;
+    //     position: absolute;
+    //     width: 200px;
+    //     height: auto;
+    //     top: 400px;
+    //     left: 700px;
 
         // @mixin warning-box {
         //     visibility: visible;
@@ -235,7 +241,7 @@
         //         visibility: visible; /* Show warning box when frog is hovered over */
         //     }
         // }
-    }
+
     &__grass-container {
         position: relative;
         width: 100%;
