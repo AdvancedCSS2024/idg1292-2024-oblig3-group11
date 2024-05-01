@@ -1,3 +1,28 @@
+.section2__frame1 {
+  position: relative;
+  height: 100vh;
+}
+.section2__frame1 #shocked-frog {
+  width: 10vw;
+  position: absolute;
+  left: 21vw;
+  top: 26vw;
+  z-index: 1;
+}
+.section2__frame1 .pond-leaf {
+  width: 12vw;
+  position: absolute;
+  left: 20vw;
+  top: 29vw;
+  z-index: 0;
+}
+.section2__frame1 .pond {
+  width: 60vw;
+  position: absolute;
+  top: 15vw;
+  z-index: -1;
+}
+
 .section3__body {
   display: flex;
   flex-direction: column;
