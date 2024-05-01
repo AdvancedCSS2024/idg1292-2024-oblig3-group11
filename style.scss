@@ -5,17 +5,48 @@
 }
 
 .section1 {
+    min-height: 100vh;
+
     &__frame1 {
+        position: relative;
+
+        h2 {
+            position: absolute;
+            text-align: center;
+        }
+
+        #frog {
+            position: absolute;
+            width: 25vw;
+            left: 35vw;
+            top: 15vw;
+            z-index: 1;
+        }
+
+        .pond-leaf {
+            position: absolute;
+            width: 29vw;
+            left: 33vw;
+            top: 23vw;
+        }
     }
 
-    &__frame2 {
+     /*&__frame2 {
+
+    }*/
+
+     &__frame3 {
+
+        img.pond {
+            position:absolute;
+            z-index: -1;
+        }
+
     }
 
-    &__frame3 {
-    }
+    /* &__frame4 {
 
-    &__frame4 {
-    }
+    }*/
 }
 
 .section2 {
@@ -75,6 +106,8 @@
         .frog {
             max-width: 10%;
             position: absolute;
+            top: 15vw;
+           
             left: 21vw;
             top: 21vw;
             z-index: 3;

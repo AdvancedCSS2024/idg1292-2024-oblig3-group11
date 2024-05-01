@@ -1,3 +1,40 @@
+.section1 {
+  min-height: 100vh;
+  /*&__frame2 {
+
+  }*/
+  /* &__frame4 {
+
+  }*/
+}
+.section1__frame1 {
+  position: relative;
+}
+.section1__frame1 h2 {
+  position: absolute;
+  text-align: center;
+}
+.section1__frame1 #frog {
+  position: absolute;
+  width: 25vw;
+  left: 35vw;
+  top: 15vw;
+  z-index: 1;
+}
+.section1__frame1 .pond-leaf {
+  position: absolute;
+  width: 29vw;
+  left: 33vw;
+  top: 23vw;
+}
+.section1__frame3 img.pond {
+  position: absolute;
+  z-index: -1;
+}
+
+
+/* KAJA */
+
 .section2__frame1 {
   position: relative;
   height: 100vh;
