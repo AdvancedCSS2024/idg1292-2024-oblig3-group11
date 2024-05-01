@@ -86,37 +86,47 @@ window.addEventListener("scroll", function() {
 
 //Function to add image elements to the grass box
 function addImagesToGrass() {
-    //Define the coordinates for the images
-    const image1Coordinates = { x: 100, y: 200 }; // Adjust as needed
-    const image2Coordinates = { x: 300, y: 400 }; // Adjust as needed
-    const image3Coordinates = { x: 600, y: 800 };
+    // Define the coordinates for the images
+    const image1Coordinates = { x: 800, y: 250 }; // Adjust as needed
+    const image2Coordinates = { x: 1000, y: 5 }; // Adjust as needed
+    const image3Coordinates = { x: 300, y: -300 };
 
-    const grassContainer = document.querySelector(".grass-container");
-    const grassBox = grassContainer.querySelector("svg");
+    const grassContainer = document.querySelector(".section3__grass-container");
     
-    //Create image elements
+    // Create image elements
     let image1 = document.createElement("img");
     let image2 = document.createElement("img");
     let image3 = document.createElement("img");
     
-    //Set image sources
+    // Set image sources
     image1.src = "assets/SVG/leafs.svg";
     image2.src = "assets/SVG/pond.svg";
     image3.src = "assets/SVG/tree.svg";
-    
-    //Set the position of the images within the SVG
-    image1.setAttribute("x", image1Coordinates.x);
-    image1.setAttribute("y", image1Coordinates.y);
-    
-    image2.setAttribute("x", image2Coordinates.x);
-    image2.setAttribute("y", image2Coordinates.y);
 
-    image3.setAttribute("x", image3Coordinates.x);
-    image3.setAttribute("y", image3Coordinates.y);
+    // Set size attributes (width and height)
+    image1.height = 100; // Adjust as needed
     
-    //Append images to the grass box
-    grassBox.appendChild(image1);
-    grassBox.appendChild(image2);
-    grassBox.appendChild(image3);
+    image2.height = 300; // Adjust as needed
+    
+    image3.height = 500; // Adjust as needed
+
+    // Set the position of the images within the grass container
+    image1.style.position = "absolute";
+    image1.style.left = `${image1Coordinates.x}px`;
+    image1.style.top = `${image1Coordinates.y}px`;
+
+    image2.style.position = "absolute";
+    image2.style.left = `${image2Coordinates.x}px`;
+    image2.style.top = `${image2Coordinates.y}px`;
+
+    image3.style.position = "absolute";
+    image3.style.left = `${image3Coordinates.x}px`;
+    image3.style.top = `${image3Coordinates.y}px`;
+    
+    // Append images to the grass container
+    grassContainer.appendChild(image1);
+    grassContainer.appendChild(image2);
+    grassContainer.appendChild(image3);
 }
+
 //TORIL
