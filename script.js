@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //Action button
 window.addEventListener("scroll", function() {
     const scrollButton = document.querySelector(".action-button");
-    if (window.scrollY > 3100 && window.scrollY < 3200) {
+    if (window.scrollY > 3000 && window.scrollY < 3200) {
         scrollButton.classList.add("show");
     } else {
         scrollButton.classList.remove("show");
