@@ -7,6 +7,30 @@
 .section1 {
     min-height: 100vh;
 
+    h1 {
+        text-align: center;
+        font-size: 5vw;
+        margin-top: 40vh;
+    }
+
+    .text-fade {
+        max-height: 50px;
+        //margin-top: 100vh;
+        //margin-bottom: 100vh;
+        //padding-top: 10vh;
+        position: sticky;
+        //top: 10vh;
+        //bottom: 0;
+        text-align: center;
+        transition: opacity 0.5s ease;
+        opacity: 0;
+    }
+    
+    .fade-in {
+        opacity: 1;
+    }
+
+
     &__frame1 {
         position: relative;
 
@@ -18,29 +42,31 @@
         #frog {
             position: absolute;
             width: 10vw;
-            left: 35vw;
+            left: 43vw;
             top: 15vw;
             z-index: 1;
         }
 
         .pond-leaf {
             position: absolute;
-            width: 10vw;
-            left: 33vw;
-            top: 23vw;
+            width: 12vw;
+            left: 42vw;
+            top: 18vw;
         }
     }
 
-     /*&__frame2 {
+     *&__frame2 {
 
-    }*/
+    }*
 
      &__frame3 {
 
-        img.pond {
-            position:absolute;
+        .pond {
+            position:relative;
             z-index: -1;
-            width: 40vw;
+            width: 100vw;
+            left: 30vw;
+            top: 18vw;
         }
 
     }

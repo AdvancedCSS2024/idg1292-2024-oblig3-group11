@@ -24,6 +24,34 @@ gsap.to("#frog", {scale: 0.6667, scrollTrigger: {
 
 // sectionEls.forEach(el=>observer.observe(el));
 
+//SANNA  
+// Get all text elements with the class 'text-fade'
+const textElements = document.querySelectorAll('.text-fade');
+
+// Function to check if an element is within the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight)
+    );
+}
+
+// Function to handle scroll event
+function handleScroll() {
+    textElements.forEach(element => {
+        if (isInViewport(element)) {
+            element.classList.add('fade-in');
+        } else {
+            element.classList.remove('fade-in');
+        }
+    });
+}
+
+// Scroll event listener
+window.addEventListener('scroll', handleScroll);
+
+
 
 
 // KAJA
