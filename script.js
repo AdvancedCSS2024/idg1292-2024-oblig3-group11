@@ -24,7 +24,23 @@ gsap.to("#frog", {scale: 0.6667, scrollTrigger: {
 
 // sectionEls.forEach(el=>observer.observe(el));
 
+// FROG ANIMATION 
 
+const frogSection1 = document.querySelector('.animate-on-scroll-frog');
+
+const observerFrog = new IntersectionObserver((entries) => {
+    entries.forEach(entry {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-frog');
+        } else {
+            entry.target.classList.remove('animate-frog');
+        }
+    });
+});
+
+animatedFrog.forEach((el) => {
+    observer.observe(el);
+});
 
 // KAJA
 
@@ -47,6 +63,8 @@ const observer = new IntersectionObserver((entries) => {
 animatedElements.forEach((el) => {
     observer.observe(el);
 });
+
+
 
 
 //TORIL

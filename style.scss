@@ -6,9 +6,19 @@
 
 #main-frog {
     width: 15vw;
-    position: sticky;
+    position: fixed;
     z-index: 5;
 }
+
+.animate-on-scroll-frog {
+    transform: translateX(20%) translateY(20%);
+}
+
+.animate-frog {
+    transform: translate(0);
+}
+
+
 
 .section1 {
     min-height: 100vh;
@@ -37,18 +47,16 @@
         }
     }
 
-     /*&__frame2 {
+    /*&__frame2 {
 
     }*/
 
-     &__frame3 {
-
+    &__frame3 {
         img.pond {
-            position:absolute;
+            position: absolute;
             z-index: -1;
             width: 40vw;
         }
-
     }
 
     /* &__frame4 {
@@ -114,7 +122,7 @@
         //     max-width: 10%;
         //     position: absolute;
         //     top: 15vw;
-           
+
         //     left: 21vw;
         //     top: 21vw;
         //     z-index: 3;
@@ -225,22 +233,22 @@
     //     top: 400px;
     //     left: 700px;
 
-        // @mixin warning-box {
-        //     visibility: visible;
-        // }
-        
-        // &:hover {
-        //     transform: translateX(200px);
-        //     @include warning-box;
-        // }
+    // @mixin warning-box {
+    //     visibility: visible;
+    // }
 
-        // &:hover {
-        //     transform: translateX(200px); /* Move frog 100px to the right on hover */
+    // &:hover {
+    //     transform: translateX(200px);
+    //     @include warning-box;
+    // }
 
-        //     .warning-box {
-        //         visibility: visible; /* Show warning box when frog is hovered over */
-        //     }
-        // }
+    // &:hover {
+    //     transform: translateX(200px); /* Move frog 100px to the right on hover */
+
+    //     .warning-box {
+    //         visibility: visible; /* Show warning box when frog is hovered over */
+    //     }
+    // }
 
     &__grass-container {
         position: relative;
