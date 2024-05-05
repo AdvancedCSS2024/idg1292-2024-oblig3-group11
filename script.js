@@ -84,7 +84,7 @@ window.addEventListener("scroll", function() {
     }
 });
 
-//Function to add image elements to the grass box
+//Function to add image elements to the grass box MAKE SO THEY DISSAPEAR WHEN OUT OF THE VIEW
 function addImagesToGrass() {
     // Define the coordinates for the images
     const image1Coordinates = { x: 800, y: 250 }; // Adjust as needed
@@ -105,9 +105,7 @@ function addImagesToGrass() {
 
     // Set size attributes (width and height)
     image1.height = 100; // Adjust as needed
-    
     image2.height = 300; // Adjust as needed
-    
     image3.height = 500; // Adjust as needed
 
     // Set the position of the images within the grass container
@@ -127,6 +125,21 @@ function addImagesToGrass() {
     grassContainer.appendChild(image1);
     grassContainer.appendChild(image2);
     grassContainer.appendChild(image3);
+    
+    // Setup Intersection Observer to remove images when they are not visible
+    const removeImagesFromGrass = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) {
+                entry.target.remove(); // Remove the image element from the DOM
+            }
+        });
+    });
+    
+    // Observe each image element
+    removeImagesFromGrass.observe(image1);
+    removeImagesFromGrass.observe(image2);
+    removeImagesFromGrass.observe(image3);
 }
+
 
 //TORIL
