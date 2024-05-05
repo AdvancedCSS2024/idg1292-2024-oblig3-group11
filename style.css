@@ -161,7 +161,8 @@
 .section3 {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensure full viewport height */
+  min-height: 100vh;
+  position: relative;
   background-color: skyblue;
   color: rgb(68, 67, 67);
   font-size: 20px;
@@ -176,13 +177,16 @@
 .section3__grass-container__frog {
   display: inline-block;
   position: absolute;
-  width: 200px;
+  max-width: 20vh;
   height: auto;
-  top: 40px;
-  left: 700px;
+  top: 4vh;
+  left: 70vh;
+  transform: translateX(-50%);
+  animation: jump 1s forwards;
+  animation-delay: 1s;
 }
 .section3__grass-container__frog:hover {
-  transform: translateX(200px); /* Move frog 100px to the right on hover */
+  transform: translateX(20vh); /* Move frog 100px to the right on hover */
 }
 .section3__grass-container__frog:hover + .warning-box {
   visibility: visible; /* Show warning box when frog is hovered over */
@@ -190,14 +194,25 @@
 .section3__house {
   display: inline-block;
   position: sticky;
-  bottom: 465px;
+  bottom: 50vh;
   z-index: 1;
 }
 
+@keyframes jump {
+  0% {
+    transform: translateX(-100vh);
+  }
+  50% {
+    transform: translateY(-15vh);
+  }
+  100% {
+    transform: translateY(5vh);
+  }
+}
 .warning-box {
   position: absolute;
-  top: -150px; /* Adjust distance from frog */
-  left: 1000px;
+  top: -20%; /* Distance from frog */
+  left: 80%; /* Distance from right edge */
   background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
   color: white;
   padding: 10px;
@@ -209,8 +224,8 @@
 .action-button {
   display: none;
   position: fixed;
-  bottom: 700px;
-  right: 150px;
+  bottom: 75%;
+  right: 20%;
   background-color: rgb(219, 139, 41);
   padding: 20px 20px;
   border: none;

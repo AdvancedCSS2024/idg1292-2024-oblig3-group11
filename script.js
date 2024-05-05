@@ -50,15 +50,33 @@ animatedElements.forEach((el) => {
 
 
 //TORIL
+
+
+// Intersection Observer to trigger animation when frog and text are in view
+const frogJump = document.querySelector('.section3__grass-container__frog');
+
+const observeJump = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('jump');
+        } else {
+            entry.target.classList.remove('jump');
+        }
+    })
+}, {
+    threshold: 1
+});
+
+
 //Text boxes
 document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("scroll", function() {
         const scrollTop = window.scrollY;
 
         // Values according to scroll position
-        const thresholdStart = 500; //Change to correct placement
+        const thresholdStart = 3000; //Change to correct placement
 
-        const grass = document.querySelector(".grass-container");
+        const grass = document.querySelector(".section3__grass-container");
 
         if (scrollTop >= thresholdStart && window.scrollY > 100) { //Change to correct placement
             // Color change when scrolling within the threshold
