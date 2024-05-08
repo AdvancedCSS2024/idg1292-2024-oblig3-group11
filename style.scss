@@ -639,12 +639,48 @@ p {
     height: 100vh;
     &__frog {
         width: 10vw;
-        left: 20vw;
-        top: 40vw;
-        position: absolute;
+        left: 45vw;
+        top: 30vw;
+        position: absolute;    
+        
+        &:hover {
+        transform: translateX(20vh);
+        // Use visibility property on the adjacent warning box
+            + .touch-frog__warning-box {
+                visibility: visible;
+            }
+        }
     }
-    
+    &__warning-box{
+    position: absolute;
+    top: 20%; /* Distance from frog */
+    left: 30%; /* Distance from right edge */
+    background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden; /* Initially hidden */
+    transition: visibility 0.3s ease;/* Add transition for smooth appearance */
+    z-index: 1;
 }
+
+}     
+.touch-frog__warning-box{
+    position: absolute;
+    top: 20%; /* Distance from frog */
+    left: 30%; /* Distance from right edge */
+    background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    visibility: hidden; /* Initially hidden */
+    transition: visibility 0.3s ease;/* Add transition for smooth appearance */
+    z-index: 1;
+}
+
+
+    
+
     //FROG
     @keyframes jump-in {
     0% {
@@ -722,17 +758,32 @@ p {
     position: relative;
     height: 100vh;
     &__frog{
-        width: 10vw;
-        left: 40vw;
-        top: 70vw;
+        width: 30vw;
+        left: 50vw;
+        top: 23vw;
         position: absolute;
+        animation: bounce2 3s 0.5s infinite; /* Using 'infinite' to repeat indefinitely */
     }
-    &__15{
-        width: 15vw;
-        left: 20vw;
-        top: 70vw;
+    &__15 {
+        width: 40vw;
+        left: -40vw; /* Initially position the element outside the viewport */
+        top: 10vw;
         position: absolute;
+        animation: slideInFromLeft 1.5s forwards; /* Apply the animation */
+      }
+      
+      @keyframes slideInFromLeft {
+        from {
+          left: -40vw; /* Starting position outside the viewport */
+        }
+        to {
+          left: 5vw; /* Final position */
+        }
+      }
+    &__text{
+        position: absolute;
+        top: 43vw;
+        left: 5vw;
+        animation: slideInFromLeft 2s forwards;
     }
-    
-
 }
