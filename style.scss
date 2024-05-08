@@ -649,6 +649,21 @@ p {
 .frog-habitat {
     display: block;
     position: relative;
+    &__action-button{
+        display: none;
+                position: fixed;
+                bottom: 75%;
+                right: 20%;
+                background-color: rgb(219, 139, 41);
+                padding: 20px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            
+                &.show {
+                    display: block;
+                }
+    }
 }
 
 .cat-walk {
