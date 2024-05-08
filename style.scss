@@ -1,7 +1,7 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+    // margin: 0;
+    // padding: 0;
 }
 
 .section1 {
@@ -48,8 +48,497 @@
     }*/
 }
 
+// KAJA //
+
 .section2 {
+    &__spacer {
+        height: 500px;
+    }
+
     &__frame1 {
+        height: 100vh;
+        position: relative;
+
+        .animate-on-scroll-heading1 {
+            font-family: sans-serif;
+            font-size: 2.5vw;
+            letter-spacing: 0.1vw;
+            position: absolute;
+            top: 5vw;
+            right: 7vw;
+            z-index: 3;
+            opacity: 0;
+            animation: heading1 2s 1s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        @keyframes heading1 {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll-pond {
+            width: 45vw;
+            position: absolute;
+            left: 10vw;
+            top: 15vw;
+            z-index: -1;
+            opacity: 0;
+            animation: sucked-in;
+            animation-duration: 7s;
+            animation-delay: 2s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        .animate-on-scroll-leaf {
+            max-width: 12vw;
+            position: absolute;
+            left: 20vw;
+            top: 24vw;
+            z-index: 0;
+            opacity: 0;
+            animation: sucked-in;
+            animation-duration: 5s;
+            animation-delay: 3s;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        @keyframes sucked-in {
+            0% {
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            100% {
+                opacity: 1;
+                transform: scale(0);
+            }
+        }
+
+        .animate-on-scroll-road {
+            width: 45vw;
+            position: absolute;
+            z-index: 2;
+
+            opacity: 0;
+            animation: road;
+            animation-duration: 2s;
+            animation-delay: 9s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        @keyframes road {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll-frog1 {
+            width: 10vw;
+            position: absolute;
+            left: 21vw;
+            top: 21vw;
+            z-index: 3;
+            opacity: 0;
+            animation:
+                enter 0.6s 3s,
+                bounce 1s 5s,
+                escape 0.6s 7s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        @keyframes enter {
+            0% {
+                transform: translateX(-350%);
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 1;
+            }
+            60% {
+                transform: translateX(-50%) translateY(-200%);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+            5% {
+                transform: translateY(-80%);
+                opacity: 1;
+            }
+            15% {
+                transform: translate(0%);
+                opacity: 1;
+            }
+        }
+
+        @keyframes escape {
+            0% {
+                opacity: 1;
+            }
+
+            80% {
+                opacity: 1;
+                transform: translateY(-200%) translateX(45vw);
+            }
+
+            100% {
+                transform: translate(50vw);
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll-frog1 {
+            width: 8vw;
+            position: absolute;
+            top: 8vw;
+            left: 23vw;
+            z-index: 4;
+            opacity: 0;
+            animation: buildings 2s 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        .animate-on-scroll-building1 {
+            width: 6vw;
+            position: absolute;
+            top: 10vw;
+            left: 15vw;
+            z-index: 4;
+            opacity: 0;
+            animation: buildings 2s 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        .animate-on-scroll-building2 {
+            width: 6vw;
+            position: absolute;
+            top: 4vw;
+            left: 15vw;
+            z-index: 4;
+            opacity: 0;
+            animation: buildings 2s 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        .animate-on-scroll-building3 {
+            width: 6vw;
+            position: absolute;
+            top: 10vw;
+            left: 8vw;
+            z-index: 3;
+            opacity: 0;
+            animation: buildings 2s 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        .animate-on-scroll-building4 {
+            opacity: 0;
+            width: 8vw;
+            position: absolute;
+            top: 3vw;
+            left: 15vw;
+            z-index: 3;
+            opacity: 0;
+            animation: buildings 2s 10s;
+            animation-fill-mode: forwards;
+            animation-play-state: paused;
+        }
+
+        @keyframes buildings {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        // SVG ANIMATIONS FRAME 1
+
+        #mouth--s2f1 {
+            animation:
+                changeMouthShocked 1s 6s,
+                changeMouth 1s 7s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes changeMouthShocked {
+            0% {
+                d: path("M47.64,19.19s15.72,5.62,31.45,0");
+            }
+
+            100% {
+                d: path("M64.64,44.68s-17.68,-15.49,-31.45,0A25,25 0 1,1 96.14 44.68s-17.68,15.49,-31.45,0Z");
+            }
+        }
+    }
+
+    .spacer {
+        height: 500px;
+    }
+
+    &__frame2 {
+        height: 100vh;
+        position: relative;
+
+        &__heading2 {
+            font-family: sans-serif;
+            font-size: 2.5vw;
+            letter-spacing: 0.1vw;
+            position: absolute;
+            top: 2vw;
+            right: 2vw;
+            z-index: 0;
+        }
+
+        .frog {
+            width: 10vw;
+            position: absolute;
+            right: 21vw;
+            top: 30vw;
+            z-index: 1;
+            opacity: 0;
+        }
+
+        .car {
+            opacity: 0;
+            width: 60vw;
+            position: absolute;
+            top: 20vw;
+            z-index: 2;
+        }
+
+        .cloud1 {
+            opacity: 0;
+            width: 20vw;
+            position: absolute;
+            left: 10vw;
+            top: 25vw;
+            z-index: 2;
+        }
+
+        .cloud2 {
+            opacity: 0;
+            width: 30vw;
+            position: absolute;
+            left: 30vw;
+            top: 20vw;
+            z-index: 2;
+        }
+
+        .cloud3 {
+            opacity: 0;
+            width: 35vw;
+            position: absolute;
+            left: 45vw;
+            top: 20vw;
+            z-index: 2;
+        }
+    }
+
+    // ANIMATIONS FRAME2
+
+    .animate-on-scroll-heading2 {
+        opacity: 0;
+        animation: heading2 1s 1s;
+    }
+
+    @keyframes heading2 {
+        0% {
+            opacity: 0;
+            // transform: translateX(-200);
+        }
+
+        5% {
+            // opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+            // transform: translate(0);
+        }
+    }
+
+    .animate-on-scroll-frog2 {
+        opacity: 0;
+        animation:
+            enter2 0.6s 2s,
+            bounce2 1.5s 4s 2;
+        // escape 0.5s 7s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes enter2 {
+        0% {
+            opacity: 0;
+            transform: translateX(400%);
+        }
+        60% {
+            opacity: 1;
+            transform: translateY(-300%);
+        }
+        100% {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounce2 {
+        0%,
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+        5% {
+            transform: translateY(-100%);
+            opacity: 1;
+        }
+        15% {
+            transform: translate(0%);
+            opacity: 1;
+        }
+    }
+
+    .animate-on-scroll-car {
+        opacity: 0;
+        animation: car 3.5s 6s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes car {
+        0% {
+            opacity: 0;
+            transform: translateX(200%);
+        }
+
+        5% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-200%);
+            opacity: 1;
+        }
+    }
+    .animate-on-scroll-pollution {
+        opacity: 0;
+        animation: cloud 8s 7s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes cloud {
+        0% {
+            opacity: 0;
+        }
+
+        90% {
+            opacity: 0.8;
+            transform: translateX(150%);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateX(150%);
+        }
+    }
+
+    // FROG SVG ANIMATIONS POLLUTED
+
+    #mouth--s2f2 {
+        animation: changeMouth 1s 6s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes changeMouth {
+        0% {
+            d: path("M47.64,19.19s15.72,5.62,31.45,0");
+        }
+
+        100% {
+            d: path("M47.64,19.19s15.72,-5.62,31.45,0");
+        }
+    }
+
+    #eye--left--polluted,
+    #eye--right--polluted {
+        animation: eyeColorChange 1s 11s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes eyeColorChange {
+        0% {
+            fill: #fff;
+        }
+        50% {
+            fill: #9c7373;
+        }
+        100% {
+            fill: #843b3b;
+        }
+    }
+
+    #body--polluted {
+        animation: bodyColorChange 1s 12s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes bodyColorChange {
+        0% {
+            fill: #9fd18f;
+        }
+        50% {
+            fill: #7c7c7c;
+        }
+        100% {
+            fill: #747474;
+        }
+    }
+
+    &__spacer {
+        height: 500px;
+    }
+
+    &__frame3 {
         height: 100vh;
         position: relative;
 
@@ -60,227 +549,467 @@
             position: absolute;
             top: 2vw;
             right: 2vw;
-            z-index: 3;
-        }
-
-        .pond {
-            width: 45vw;
-            position: absolute;
-            left: 10vw;
-            top: 15vw;
-            z-index: -1;
-        }
-
-        .pond-leaf {
-            max-width: 12vw;
-            position: absolute;
-            left: 20vw;
-            top: 24vw;
             z-index: 0;
-        }
-
-        .road {
-            height: 100vh;
-            position: absolute;
-            z-index: 2;
         }
 
         .frog {
             width: 10vw;
             position: absolute;
-            left: 21vw;
-            top: 21vw;
-            z-index: 3;
+            left: 25vw;
+            top: 30vw;
+            z-index: 1;
+        }
+
+        .frog-sick1 {
+            width: 10vw;
+            position: absolute;
+            left: 40vw;
+            top: 30vw;
+            z-index: 1;
+        }
+
+        .frog-sick2 {
+            width: 10vw;
+            position: absolute;
+            left: 55vw;
+            top: 30vw;
+            z-index: 2;
+        }
+
+        .frog-sick3 {
+            width: 10vw;
+            position: absolute;
+            left: 67vw;
+            top: 30vw;
+            z-index: 2;
+        }
+
+        .frog-sick4 {
+            width: 10vw;
+            position: absolute;
+            left: 75vw;
+            top: 30vw;
+            z-index: 2;
+        }
+
+        .frog-sick5 {
+            width: 10vw;
+            position: absolute;
+            left: 80vw;
+            top: 30vw;
+            z-index: 2;
+        }
+
+        // ANIMATIONS FRAME 3
+
+        .animate-on-scroll-heading3 {
             opacity: 0;
+            animation: heading3 2s 2s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes heading3 {
+            0% {
+                opacity: 0;
+                // transform: translateX(-200);
+            }
+
+            5% {
+                // opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+                // transform: translate(0);
+            }
+        }
+
+        .animate-on-scroll-frog3 {
+            opacity: 0;
+            animation:
+                enter3 1s 5s,
+                bounce3 1.7s 10s infinite;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes enter3 {
+            0% {
+                transform: translateX(-400%);
+                opacity: 0;
+            }
+
+            5% {
+                opacity: 1;
+            }
+
+            30% {
+                opacity: 1;
+                transform: translateX(-300%) translateY(-200%);
+            }
+
+            40% {
+                opacity: 1;
+                transform: translateX(-200%) translateY(0);
+            }
+
+            75% {
+                opacity: 1;
+                transform: translateX(-100%) translateY(-200%);
+            }
+            100% {
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce3 {
+            0% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+            5% {
+                transform: translateY(-100%);
+                opacity: 1;
+            }
+            15% {
+                transform: translateY(0%) translateX(25%);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translateY(0%) translateX(25%);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateY(-100%);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll-frog-sick1 {
+            opacity: 0;
+            animation:
+                enter-sick1 1s 1s,
+                bounce2 1.5s 6s infinite;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes enter-sick1 {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateX(0) translateY(-200%);
+            }
+
+            // 40% {
+            //     opacity: 1;
+            //     transform: translateX(-50%) translateY(0);
+            // }
+
+            // 60% {
+            //     opacity: 1;
+            //     transform: translateX(-25%) translateY(-200%);
+            // }
+            100% {
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-on-scroll-frog-sick2 {
+            opacity: 0;
+            animation:
+                enter-sick2 1s 3s,
+                bounce4 1.4s 5s infinite;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes enter-sick2 {
+            0% {
+                transform: translateX(200%);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateX(0) translateY(-300%);
+            }
+
+            100% {
+                transform: translate(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce4 {
+            0%,
+            100% {
+                transform: translateY(0%);
+                opacity: 1;
+            }
+            5% {
+                transform: translateY(-150%);
+                opacity: 1;
+            }
+            15% {
+                transform: translate(0%);
+                opacity: 1;
+            }
+
+            50% {
+                transform: translate(0%);
+                opacity: 1;
+            }
+
+            80% {
+                transform: translateY(-200%);
+                opacity: 1;
+            }
+        }
+
+        // FROG SVG ANIMATIONS SICK
+
+        #eye--left--sick,
+        #eye--right--sick {
+            animation: eyeColorChangeSick 1s 8s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes eyeColorChangeSick {
+            0% {
+                fill: #fff;
+            }
+            50% {
+                fill: #9c7373;
+            }
+            100% {
+                fill: #843b3b;
+            }
+        }
+
+        #cheek--left--sick,
+        #cheek--right--sick {
+            animation: cheekChangeSick 0.5s 9s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes cheekChangeSick {
+            0% {
+                fill: #fff;
+            }
+            50% {
+                fill: #9c7373;
+            }
+            100% {
+                fill: #dd5827;
+            }
+        }
+
+        #body--sick {
+            animation: bodyColorChangeSick 2s 9s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes bodyColorChangeSick {
+            0% {
+                fill: #9fd18f;
+            }
+            50% {
+                fill: #a2aa46;
+            }
+            100% {
+                fill: #c5d11b;
+            }
+        }
+
+        #mouth--s2f3 {
+            animation: changeMouth 2s 10s;
+            animation-fill-mode: forwards;
+        }
+    }
+
+    &__spacer {
+        height: 500px;
+    }
+
+    &__frame4 {
+        height: 100vh;
+        position: relative;
+        animation: background-death 8s 2s;
+        animation-fill-mode: forwards;
+
+        &__heading {
+            font-family: sans-serif;
+            font-size: 2.5vw;
+            letter-spacing: 0.1vw;
+            position: absolute;
+            left: 3vw;
+            top: 5vw;
+            z-index: 1;
+        }
+
+        .dead-frog1 {
+            opacity: 0;
+            width: 10vw;
+            position: absolute;
+            left: 10vw;
+            z-index: 3;
+            animation: dead-frog 7s 4s 1 forwards;
+        }
+
+        .dead-frog2 {
+            opacity: 0;
+            width: 10vw;
+            position: absolute;
+            left: 25vw;
+            z-index: 1;
+            animation: dead-frog 12s 4s 1 forwards;
+        }
+
+        .dead-frog3 {
+            opacity: 0;
+            width: 10vw;
+            position: absolute;
+            left: 40vw;
+            z-index: 3;
+            animation: dead-frog 6s 4s 1 forwards;
+        }
+
+        .dead-frog4 {
+            opacity: 0;
+            width: 10vw;
+            position: absolute;
+            left: 55vw;
+            z-index: 3;
+            animation: dead-frog 9s 4s 1 forwards;
+        }
+
+        .dead-frog5 {
+            opacity: 0;
+            width: 10vw;
+            position: absolute;
+            left: 65vw;
+            z-index: 1;
+            animation: dead-frog 7s 4s 1 forwards;
+        }
+
+        .dead-frog6 {
+            opacity: 0;
+            width: 10vw;
+            position: absolute;
+            left: 80vw;
+            z-index: 3;
+            animation: dead-frog 10s 4s 1 forwards;
+        }
+
+    ANIMATIONS FRAME 4
+
+    @keyframes background-death {
+        0% {
+            background-color: white;
+        }
+
+        40% {
+            background-color: #272942;
+        }
+
+        60% {
+            background-color: #843b3b;
+        }
+
+        100% {
+            background-color: #272942;
+        }
+    }
+
+    .animate-on-scroll-heading4 {
+        opacity: 0;
+        animation: heading4 2s 1s;
+    }
+
+    @keyframes heading4 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #apocalypse-headline {
+        animation: apocalypse 1s 2s;
+        animation-fill-mode: forwards;
+        font-family: sans-serif;
+        font-size: 7em;
+        text-align: center;
+        padding: 0 100px;
+        opacity: 0;
+        position: absolute;
+        top: 10vw;
+        z-index: 2;
+    }
+
+    @keyframes apocalypse {
+        0% {
+            opacity: 0;
+            transform: translateX(-300%);
+        }
+
+        5% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate(0);
+        }
+    }
+
+    @keyframes dead-frog {
+        0% {
+            opacity: 0;
+            transform: translateY(-100);
+        }
+
+        5% {
+            opacity: 1;
+        }
+
+        99% {
+            opacity: 1;
+            transform: translateY(500%) rotate(360deg);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateY(1000%);
         }
     }
 }
-// ANIMATIONS
 
-.animate-on-scroll-frog {
-    animation: enter 1s 4s, bounce 1s 7s, escape 0.5s 7s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes enter {
-    0% {
-        transform: translateX(-200%);
-        opacity: 0;
-    }
-
-    5% {
-        opacity: 1;
-    }
-    60% {
-        transform: translateX(-50%) translateY(-100%);
-        opacity: 1;
-    }
-    100% {
-        transform: translate(0);
-        opacity: 1;
-    }
-}
-
-@keyframes bounce {
-    0%,
-    100% {
-        transform: translateY(0%);
-        opacity: 1;
-    }
-    5% {
-        transform: translateY(-80%);
-        opacity: 1;
-    }
-    15% {
-        transform: translate(0%);
-        opacity: 1;
-    }
-}
-
-@keyframes escape {
-    70% {
-        transform: translateY(-150%) translateX(30vw);
-        opacity: 1;
-    }
-    100% {
-        transform: translateX(50vw);
-        opacity: 1;
-    }
-}
-
-// .animate-on-scroll-frog {
-//     opacity: 0;
-//     animation: enter, bounce, escape;
-//     animation-duration: 0.5s, 1s, 0.5s;
-//     animation-delay: 3s, 5s, 7s;
-//     animation-fill-mode: forwards;
-// }
-
-// @keyframes enter {
-//     0% {
-//         transform: translateX(-200%);
-//     }
-
-//     60% {
-//         transform: translateX(-50%) translateY(-100%);
-//     }
-
-//     100% {
-//         transform: translate(0);
-//     }
-// }
-
-// @keyframes bounce {
-//     0%,
-//     100% {
-//         transform: translateY(0%);
-//     }
-//     5% {
-//         transform: translateY(-80%);
-//     }
-//     15% {
-//         transform: translate(0%);
-//     }
-// }
-
-// @keyframes escape {
-//     50% {
-//         transform: translateY(-150%) translateX(30vw);
-//     }
-
-//     100% {
-//         transform: translateX(50vw);
-//     }
-// }
-
-.animate-on-scroll-heading {
-    opacity: 0;
-    animation: heading;
-    animation-duration: 2s;
-    animation-delay: 1s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes heading {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.animate-on-scroll-pond {
-    opacity: 0;
-    animation: sucked-in;
-    animation-duration: 8s;
-    animation-delay: 1;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-.animate-on-scroll-leaf {
-    opacity: 0;
-    animation: sucked-in;
-    animation-duration: 7s;
-    animation-delay: 1s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-
-@keyframes sucked-in {
-    0% {
-        opacity: 0;
-    }
-
-    60% {
-        opacity: 1;
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(0);
-    }
-}
-
-.animate-on-scroll-road {
-    opacity: 0;
-    animation: road;
-    animation-duration: 4s;
-    animation-delay: 7s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes road {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.animate {
-    opacity: 1;
-}
+// // GENERAL STYLES
 
 .emphasized-text {
     font-weight: bold;
     color: rgb(235, 94, 94);
-    text-shadow: 2px 2px 2px gray;
+    text-shadow: 2px 2px 2px rgb(26, 25, 25);
     font-style: normal;
 }
 
-// &__frame2 {
-// }
-
-// &__frame3 {
-// }
-
-// &__frame4 {
-// }
+.animate {
+    animation-play-state: running;
+}
 
 // TORIL
 

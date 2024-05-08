@@ -3,7 +3,7 @@ gsap.to("#frog", {scale: 0.6667, scrollTrigger: {
   trigger: ".section1__frame3",
   pin: ".section1__frame3",
   scrub: true
-}})*/ 
+}})*/
 
 // Alexis code 
 // const sectionEls = document.querySelectorAll("[data-hidden]");
@@ -28,51 +28,135 @@ gsap.to("#frog", {scale: 0.6667, scrollTrigger: {
 
 // KAJA
 
-const section2 = document.querySelector('.section2__frame1');
-const animatedElements = section2.querySelectorAll('.animate-on-scroll-heading, .animate-on-scroll-road, .animate-on-scroll-pond, .animate-on-scroll-leaf, .animate-on-scroll-frog');
 
-const observer = new IntersectionObserver((entries) => {
+
+// Add event listener for scroll events
+window.addEventListener('scroll', handleScroll);
+
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Function to handle scroll events
+function handleScroll() {
+    const elements = document.querySelectorAll('.section2__frame1, .section2__frame2');
+    elements.forEach(element => {
+        if (isInViewport(element)) {
+            element.classList.add('animate');
+        }
+    });
+}
+
+// Initial check on page load
+handleScroll();
+
+// FRAME 1
+
+const section2Frame1 = document.querySelector('.section2__frame1');
+const animatedElements1 = section2Frame1.querySelectorAll('.animate-on-scroll-heading1, .animate-on-scroll-leaf, .animate-on-scroll-road, .animate-on-scroll-frog1, .animate-on-scroll-frog1, .animate-on-scroll-building2, .animate-on-scroll-building3, .animate-on-scroll-building4, #mouth--s2f1')
+
+const observer1 = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if (entry.isIntersecting) {
-            animatedElements.forEach((el) => {
+            animatedElements1.forEach((el) => {
                 el.classList.add('animate');
             });
+
         } else {
-            animatedElements.forEach((el) => {
+            animatedElements1.forEach((el) => {
                 el.classList.remove('animate');
             });
         }
     })
 }, {
-    threshold: 1.0
+    threshold: 0.5,
+    rootMargin: '0px 0px -100%'
 });
 
-// animatedElements.forEach((el, index) => {
-//     // New observer for each element to be animated by scroll
-//     const elementObserver = new IntersectionObserver((entries) => {
-//         entries.forEach((entry) => {
-//             if (entry.isIntersecting) {
+// FRAME 2
 
-//                 entry.target.classList.add('animate');
-//             } else {
+const section2Frame2 = document.querySelector('.section2__frame2');
+const animatedElements2 = section2Frame2.querySelectorAll('.animate-on-scroll-heading2, .animate-on-scroll-frog2, .animate-on-scroll-car, .animate-on-scroll-pollution');
 
-//                 entry.target.classList.remove('animate');
-//             }
-//         });
-//     }, {
-//         threshold: 1.0
-//         // Increase rootMargin for each element according to scroll tiem
-//         rootMargin: `${-100 * index}px 0px ${100 * index}px 0px `
-//     });
-    
-    observer.observe(section2);
+const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            animatedElements2.forEach((el) => {
+                el.classList.add('animate');
+            });
+
+        } else {
+            animatedElements2.forEach((el) => {
+                el.classList.remove('animate');
+            });
+        }
+    })
+}, {
+    threshold: 0.5,
+    rootMargin: '0px 0px -100%'
+});
+
+// FRAME 3
+
+// const section2Frame3 = document.querySelector('.section2__frame3');
+// const animatedElements3 = section2Frame3.querySelectorAll('.animate-on-scroll-heading3, .animate-on-scroll-frog3, .animate-on-scroll-frog-sick1, .animate-on-scroll-frog-sick2');
+
+// const observer3 = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//             animatedElements3.forEach((el) => {
+//                 el.classList.add('animate');
+//             });
+//         } else {
+//             animatedElements3.forEach((el) => {
+//                 el.classList.remove('animate');
+//             });
+//         }
+//     })
+// }, {
+//     threshold: 1.0
+//     // rootMargin: '50px'
 // });
 
+// const section2Frame4 = document.querySelector('.section2__frame4');
+// const animatedElements4 = section2Frame4.querySelectorAll('.animate-on-scroll-heading4, #apocalypse-background, #apocalypse-headline');
 
-//TORIL
-//Text boxes
-// document.addEventListener("DOMContentLoaded", function() {
-//     window.addEventListener("scroll", function() {
+// const observer4 = new IntersectionObserver((entries) => {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//             animatedElements4.forEach((el) => {
+//                 el.classList.add('animate');
+//             });
+//         } else {
+//             animatedElements4.forEach((el) => {
+//                 el.classList.remove('animate');
+//             });
+//             console.log(section2Frame1);
+//             console.log(animatedElements1);
+//         }
+//     })
+// }, {
+//     threshold: 0,
+//     // rootMargin: '50px'
+// });
+
+observer1.observe(section2Frame1);
+observer2.observe(section2Frame2);
+// observer3.observe(section2Frame3);
+// observer4.observe(section2Frame4);
+
+
+// TORIL
+// Text boxes
+// document.addEventListener("DOMContentLoaded", function () {
+//     window.addEventListener("scroll", function () {
 //         const scrollTop = window.scrollY;
 
 //         // Values according to scroll position
@@ -90,12 +174,12 @@ const observer = new IntersectionObserver((entries) => {
 //             scrollGrass.classList.remove("show")
 //         }
 
-        
+
 //     });
 // });
 
 // //Action button
-// window.addEventListener("scroll", function() {
+// window.addEventListener("scroll", function () {
 //     const scrollButton = document.querySelector(".action-button");
 //     if (window.scrollY > 3000 && window.scrollY < 3200) {
 //         scrollButton.classList.add("show");
@@ -112,12 +196,12 @@ const observer = new IntersectionObserver((entries) => {
 //     const image3Coordinates = { x: 300, y: -300 };
 
 //     const grassContainer = document.querySelector(".section3__grass-container");
-    
+
 //     // Create image elements
 //     let image1 = document.createElement("img");
 //     let image2 = document.createElement("img");
 //     let image3 = document.createElement("img");
-    
+
 //     // Set image sources
 //     image1.src = "assets/SVG/leafs.svg";
 //     image2.src = "assets/SVG/pond.svg";
@@ -125,9 +209,9 @@ const observer = new IntersectionObserver((entries) => {
 
 //     // Set size attributes (width and height)
 //     image1.height = 100; // Adjust as needed
-    
+
 //     image2.height = 300; // Adjust as needed
-    
+
 //     image3.height = 500; // Adjust as needed
 
 //     // Set the position of the images within the grass container
@@ -142,7 +226,7 @@ const observer = new IntersectionObserver((entries) => {
 //     image3.style.position = "absolute";
 //     image3.style.left = `${image3Coordinates.x}px`;
 //     image3.style.top = `${image3Coordinates.y}px`;
-    
+
 //     // Append images to the grass container
 //     grassContainer.appendChild(image1);
 //     grassContainer.appendChild(image2);
