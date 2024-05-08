@@ -1,305 +1,687 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-.section1 {
-    min-height: 100vh;
-
-    &__frame1 {
-        position: relative;
-
-        h2 {
-            position: absolute;
-            text-align: center;
-        }
-
-        #frog {
-            position: absolute;
-            width: 10vw;
-            left: 35vw;
-            top: 15vw;
-            z-index: 1;
-        }
-
-        .pond-leaf {
-            position: absolute;
-            width: 10vw;
-            left: 33vw;
-            top: 23vw;
-        }
-    }
-
-     /*&__frame2 {
-
-    }*/
-
-     &__frame3 {
-
-        img.pond {
-            position:absolute;
-            z-index: -1;
-            width: 40vw;
-        }
-
-    }
-
-    /* &__frame4 {
-
-    }*/
-}
-
-.section2 {
-    &__frame1 {
-        height: 100vh;
-        position: relative;
-
-        &__heading {
-            font-family: sans-serif;
-            font-size: 2.5vw;
-            letter-spacing: 0.1vw;
-            position: absolute;
-            right: 5vw;
-            padding-top: 5%;
-            z-index: 5;
-        }
-
-        .pond {
-            width: 45vw;
-            position: absolute;
-            left: 10vw;
-            top: 15vw;
-            z-index: -1;
-            animation: sucked-in 1s forwards;
-            animation-delay: 4s;
-            animation-iteration-count: 1;
-        }
-
-        .pond-leaf {
-            max-width: 12vw;
-            position: absolute;
-            left: 20vw;
-            top: 24vw;
-            z-index: 0;
-            animation: sucked-in 0.5 forwards;
-            animation-delay: 4s;
-            animation-iteration-count: 1;
-        }
-
-        @keyframes sucked-in {
-            0% {
-                transform: scale(1);
-            }
-
-            100% {
-                transform: scale(0);
-            }
-        }
-
-        .road {
-            height: 85vh;
-            position: absolute;
-            left: 5vw;
-            z-index: 2;
-        }
-
-        .frog {
-            max-width: 10%;
-            position: absolute;
-            top: 15vw;
-           
-            left: 21vw;
-            top: 21vw;
-            z-index: 3;
-            animation:
-                bounce 1.5s,
-                escape 1s forwards;
-            animation-delay: 0.5s, 4s;
-        }
-
-        @keyframes bounce {
-            0%,
-            100% {
-                transform: translateY(0%);
-            }
-            5% {
-                transform: translateY(-80%);
-            }
-            15% {
-                transform: translate(0%);
-            }
-        }
-
-        @keyframes escape {
-            50% {
-                transform: translateY(-80%) translateX(30vw);
-            }
-
-            100% {
-                transform: translateX(50vw);
-            }
-        }
-    }
-
-    // ANIMATIONS
-
-    .animate-on-scroll-heading {
-        opacity: 0;
-        transform: translateX(0);
-        transition: 1s;
-        transition-delay: 0s;
-    }
-
-    .animate-on-scroll-pond {
-        opacity: 0;
-        transform: translate(0);
-        transition: 1.5s;
-        transition-delay: 0.5s;
-    }
-
-    .animate-on-scroll-leaf {
-        opacity: 0;
-        transform: translate(0);
-        transition: 1.5s;
-        transition-delay: 0.5s;
-    }
-
-    .animate-on-scroll-road {
-        opacity: 0;
-        transform: translate(0);
-        transition: 1.5s;
-        transition-delay: 2s;
-    }
-
-    .animate {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .emphasized-text {
-        font-weight: bold;
-        color: rgb(235, 94, 94);
-        text-shadow: 2px 2px 2px gray;
-        font-style: normal;
-    }
-
-    // &__frame2 {
-    // }
-
-    // &__frame3 {
-    // }
-
-    // &__frame4 {
-    // }
-}
-
-// TORIL
-
-.grass-container {
-    position: sticky;
-    bottom: 0;
+body {
+    height: 100vh;
     width: 100%;
-    height: 50vh; // Adjust the height as needed
-    background-color: rgb(129, 127, 8); // Initial color
+    background-image: url(assets/SVG/backgroundimage-noroads.svg);
+    background-repeat: none;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.section3 {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Ensure full viewport height */
-    background-color: skyblue;
-    color: rgb(68, 67, 67);
-    font-size: 20px;
-    &__grass-container {
-        position: sticky;
-        bottom: 0;
-        width: 100%;
-        height: 50vh; // Adjust the height as needed
-        background-color: rgb(129, 127, 8); // Initial color
-        &__frog {
-            display: inline-block;
-            position: absolute;
-            width: 200px;
-            height: auto;
-            top: 40px;
-            left: 700px;
-    
-            // @mixin warning-box {
-            //     visibility: visible;
-            // }
-            
-            // &:hover {
-            //     transform: translateX(200px);
-            //     @include warning-box;
-            // }
-    
-            &:hover {
-                 transform: translateX(200px); /* Move frog 100px to the right on hover */
-    
-                 +.warning-box {
-                     visibility: visible; /* Show warning box when frog is hovered over */
-                 }
-             }
+//GENERAL STYLING
+h1,
+h2,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.emphasized-text {
+    font-weight: bold;
+    color: rgb(235, 94, 94);
+    text-shadow: 2px 2px 2px rgb(26, 25, 25);
+    font-style: normal;
+}
+
+.spacer {
+    height: 500px;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+}
+
+//SANNA
+.introduction {
+    position: relative;
+    height: 100vh;
+
+    h1 {
+        text-align: center;
+        font-size: 5vw;
+    }
+}
+
+.important {
+    position: relative;
+    height: 100vh;
+
+    &__frog {
+        position: absolute;
+        width: 10vw;
+        left: 43vw;
+        top: 15vw;
+        z-index: 1;
+        opacity: 0;
+        animation: fadeIn 2s 1s ease forwards; /*Fade in animation for frog after 1 second delay */
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
         }
     }
-    &__house {
-        display: inline-block;
-        position: sticky;
-        bottom: 465px;
+
+   
+
+    &__pond-leaf {
+        position: absolute;
+        width: 12vw;
+        left: 42vw;
+        top: 11vw;
+        animation: fadeIn 2s 1s ease forward;
+    }
+}
+
+.ecosystem {
+    position: relative;
+    height: 100vh;
+
+    &__frog--apear {
+        position: absolute;
+        width: 10vw;
+        left: 43vw;
+        top: 22vw;
+        z-index: 2;
+        opacity: 0;
+        animation: enter 0.5s forwards; 
+    }
+
+    &__pond-leaf {
+        position: absolute;
+        width: 12vw;
+        left: 42vw;
+        top: 25vw;
         z-index: 1;
     }
+
+    &__pond {
+        position: absolute;
+        z-index: -1;
+        width: 60vw;
+        left: 20vw;
+        top: 15vw;
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    &__algae1 {
+        position: absolute;
+        width: 5vw;
+        top: 22vw;
+        right: 18vw;
+        opacity: 1;
+        animation: fadeOut 0.5s 4s ease-in-out forwards;
+    }
+
+    &__algae2 {
+        position: absolute;
+        top: 24vw;
+        width: 10vw;
+        right: 60vw;
+        opacity: 1;
+        animation: fadeOut 0.5s 2s ease-in-out forwards;
+    }
+
+    @keyframes flyAround {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(4vw, 4vh);
+        }
+        100% {
+            transform: translate(4vw, 0);
+            opacity: 0;
+        }
+    }
+
+    &__mosquito--1 {
+        position: absolute;
+        right: 40vw;
+        width: 4vh;
+        animation: flyAround 7s linear forwards; 
+    }
+
+    &__mosquito--2 {
+        position: absolute;
+        right: 30vw;
+        width: 4vh;
+        animation: flyAround 5s linear forwards; 
+    }
+
+    &__mosquito--3 {
+        position: absolute;
+        right: 70vw;
+        width: 4vh;
+        animation: flyAround 4s linear forwards; 
+    }
+
+    @keyframes moveArch {
+        0% {
+          transform: translateX(1800px) translateY(0);
+        }
+        100% {
+          transform: translateX(-200px) translateY(100px); /* Adjust values to fit your arch */
+        }
+    }
+
+    &__bird {
+        width: 10vw;
+        left: -10vw;
+        animation: moveArch 5s forwards ; /* Adjust duration as needed */
+    }
 }
 
-.warning-box {
-    position: absolute;
-    top: -150px; /* Adjust distance from frog */
-    left: 1000px;
-    background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    visibility: hidden; /* Initially hidden */
-    transition: visibility 0.3s ease; /* Add transition for smooth appearance */
+
+//KAJA
+
+.habitat-loss {
+    position: relative;
+    height: 100vh;
+
+    &__heading1 {
+        font-size: 2.5vw;
+        letter-spacing: 0.1vw;
+        position: absolute;
+        top: 5vw;
+        right: 7vw;
+        z-index: 3;
+        opacity: 0;
+        animation: heading1 2s 0.5s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes heading1 {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &__pond {
+        width: 45vw;
+        position: absolute;
+        left: 10vw;
+        top: 15vw;
+        z-index: -1;
+        opacity: 0;
+        animation: sucked-in;
+        animation-duration: 7s;
+        animation-delay: 2s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        // animation-play-state: paused;
+    }
+
+    &__pond-leaf {
+        max-width: 12vw;
+        position: absolute;
+        left: 20vw;
+        top: 24vw;
+        z-index: 0;
+        opacity: 0;
+        animation: sucked-in 5s 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+       
+    }
+
+    @keyframes sucked-in {
+        0% {
+            opacity: 0;
+        }
+
+        10% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(0);
+        }
+    }
+
+    &__road {
+        width: 45vw;
+        position: absolute;
+        z-index: 2;
+        opacity: 0;
+        animation: road;
+        animation-duration: 2s;
+        animation-delay: 9s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes road {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    &__frog1 {
+        width: 10vw;
+        position: absolute;
+        left: 21vw;
+        top: 21vw;
+        z-index: 3;
+        opacity: 0;
+        animation:
+            enter 0.6s 3s,
+            bounce 1s 5s,
+            escape 0.6s 7s;
+        animation-fill-mode: forwards;
+        // animation-play-state: paused;
+    }
+
+    @keyframes enter {
+        0% {
+            transform: translateX(-350%);
+            opacity: 0;
+        }
+
+        5% {
+            opacity: 1;
+        }
+        60% {
+            transform: translateX(-50%) translateY(-200%);
+            opacity: 1;
+        }
+        100% {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounce {
+        0%,
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+        5% {
+            transform: translateY(-80%);
+            opacity: 1;
+        }
+        15% {
+            transform: translate(0%);
+            opacity: 1;
+        }
+    }
+
+    @keyframes escape {
+        0% {
+            opacity: 1;
+        }
+
+        80% {
+            opacity: 1;
+            transform: translateY(-200%) translateX(45vw);
+        }
+
+        100% {
+            transform: translate(50vw);
+            opacity: 1;
+        }
+    }
+
+    &__building1 {
+        width: 6vw;
+        position: absolute;
+        top: 10vw;
+        left: 25vw;
+        z-index: 4;
+        opacity: 0;
+        animation: buildings 2s 10s;
+        animation-fill-mode: forwards;
+        // animation-play-state: paused;
+    }
+
+    &__building2 {
+        width: 6vw;
+        position: absolute;
+        top: 4vw;
+        left: 15vw;
+        z-index: 4;
+        opacity: 0;
+        animation: buildings 2s 10s;
+        animation-fill-mode: forwards;
+        // animation-play-state: paused;
+    }
+
+    &__building3 {
+        width: 6vw;
+        position: absolute;
+        top: 10vw;
+        left: 8vw;
+        z-index: 3;
+        opacity: 0;
+        animation: buildings 2s 10s;
+        animation-fill-mode: forwards;
+        // animation-play-state: paused;
+    }
+
+    &__building4 {
+        opacity: 0;
+        width: 8vw;
+        position: absolute;
+        top: 3vw;
+        left: 15vw;
+        z-index: 3;
+        opacity: 0;
+        animation: buildings 2s 10s;
+        animation-fill-mode: forwards;
+        // animation-play-state: paused;
+    }
+
+    @keyframes buildings {
+        0% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
 }
 
-.action-button {
-    display: none;
-    position: fixed;
-    bottom: 700px;
-    right: 150px;
-    background-color: rgb(219, 139, 41);
-    padding: 20px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+// SVG ANIMATIONS HABITAT LOSS
+
+#mouth--s2f1 {
+    animation:
+        changeMouthShocked 3s 7s,
+        changeMouth 1s 10s;
+    animation-fill-mode: forwards;
 }
 
-.action-button.show {
-    display: block;
+@keyframes changeMouthShocked {
+    0% {
+        d: path("M47.64,19.19s15.72,5.62,31.45,0");
+    }
+
+    100% {
+        d: path("M64.64,44.68s-17.68,-15.49,-31.45,0A25,25 0 1,1 96.14 44.68s-17.68,15.49,-31.45,0Z");
+    }
 }
 
-.section3__text1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@keyframes changeMouth {
+    0% {
+        d: path("M47.64,19.19s15.72,5.62,31.45,0");
+    }
+
+    100% {
+        d: path("M47.64,19.19s15.72,-5.62,31.45,0");
+    }
+}
+
+.pollution {
+    position: relative;
+    height: 100vh;
+
+    &__heading2 {
+        // font-family: sans-serif;
+        font-size: 2.5vw;
+        letter-spacing: 0.1vw;
+        position: absolute;
+        top: 2vw;
+        right: 2vw;
+        z-index: 0;
+        opacity: 0;
+        animation: heading2 2s 0.5s;
+    }
+
+    @keyframes heading2 {
+
+        0% {
+            opacity: 0;
+            // transform: translateX(-200);
+        }
+
+        5% {
+            // opacity: 1;
+        }
+
+        100% {
+            opacity: 1;
+            // transform: translate(0);
+        }
+    }
+
+    &__frog2 {
+        width: 10vw;
+        position: absolute;
+        right: 21vw;
+        top: 30vw;
+        z-index: 1;
+        opacity: 0;
+        opacity: 0;
+        animation:
+            enter2 0.6s 2s,
+            bounce2 1.5s 4s 2;
+        // escape 0.5s 7s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes enter2 {
+        0% {
+            opacity: 0;
+            transform: translateX(400%);
+        }
+        60% {
+            opacity: 1;
+            transform: translateY(-300%);
+        }
+        100% {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes bounce2 {
+        0%,
+        100% {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+        5% {
+            transform: translateY(-100%);
+            opacity: 1;
+        }
+        15% {
+            transform: translate(0%);
+            opacity: 1;
+        }
+    }
+
+    &__car {
+        opacity: 0;
+        width: 60vw;
+        position: absolute;
+        top: 20vw;
+        z-index: 2;
+        opacity: 0;
+        animation: car 3.5s 6s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes car {
+        0% {
+            opacity: 0;
+            transform: translateX(200%);
+        }
+
+        5% {
+            opacity: 1;
+        }
+
+        100% {
+            transform: translateX(-200%);
+            opacity: 1;
+        }
+    }
+
+    &__pollution1 {
+        opacity: 0;
+        width: 20vw;
+        position: absolute;
+        left: 10vw;
+        top: 25vw;
+        z-index: 2;
+        opacity: 0;
+        animation: cloud 8s 7s;
+        animation-fill-mode: forwards;
+    }
+
+    &__pollution2 {
+        opacity: 0;
+        width: 30vw;
+        position: absolute;
+        left: 30vw;
+        top: 20vw;
+        z-index: 2;
+        animation: cloud 8s 7s;
+        animation-fill-mode: forwards;
+    }
+
+    &__pollution3 {
+        opacity: 0;
+        width: 35vw;
+        position: absolute;
+        left: 45vw;
+        top: 20vw;
+        z-index: 2;
+        animation: cloud 8s 7s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes cloud {
+        0% {
+            opacity: 0;
+        }
+
+        90% {
+            opacity: 0.8;
+            transform: translateX(150%);
+        }
+
+        100% {
+            opacity: 0;
+            transform: translateX(150%);
+        }
+    }
+
+    // FROG SVG ANIMATIONS POLLUTED
+
+    #mouth--s2f2 {
+        animation: changeMouth 1s 6s;
+        animation-fill-mode: forwards;
+    }
+
+    #eye--left--polluted,
+    #eye--right--polluted {
+        animation: eyeColorChange 1s 11s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes eyeColorChange {
+        0% {
+            fill: #fff;
+        }
+        50% {
+            fill: #9c7373;
+        }
+        100% {
+            fill: #843b3b;
+        }
+    }
+
+    #body--polluted {
+        animation: bodyColorChange 1s 12s;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes bodyColorChange {
+        0% {
+            fill: #9fd18f;
+        }
+        50% {
+            fill: #7c7c7c;
+        }
+        100% {
+            fill: #747474;
+        }
+    }
+}
+
+//TORIL
+
+.touch-frog {
+    display: relative;
+    height: 100vh;
+    &__frog {
+        width: 10vw;
+        left: 20vw;
+        top: 40vw;
+        position: absolute;
+    }
+    
+}
+
+.frog-habitat {
+    display: relative;
     height: 100vh;
 }
 
-.section3__text2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.cat-walk {
+    display: relative;
     height: 100vh;
+    &__moon{
+        width: 20vh;
+        left: 100vw;
+        top: 10vw;
+        position: absolute;
+    }
+    &__cat{
+        width: 10vw;
+        left: 70vw;
+        top: 60vw;
+        position: absolute;
+    }
 }
 
-.section3__text3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.unsg {
+    display: relative;
     height: 100vh;
+    &__frog{
+        width: 10vw;
+        left: 40vw;
+        top: 70vw;
+        position: absolute;
+    }
+    &__15{
+        width: 15vw;
+        left: 20vw;
+        top: 70vw;
+        position: absolute;
+    }
+    
+
 }
-// TORIL
