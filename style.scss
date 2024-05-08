@@ -196,110 +196,177 @@
 
 // TORIL
 
-.grass-container {
-    position: sticky;
-    bottom: 0;
-    width: 100%;
-    height: 50vh;
-    background-color: rgb(129, 127, 8); // Initial color
-}
-
 .section3 {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
     position: relative;
-    background-color: skyblue;
-    color: rgb(68, 67, 67);
-    font-size: 20px;
-    &__grass-container {
-        position: sticky;
-        bottom: 0;
-        width: 100%;
-        height: 50vh; // Adjust the height as needed
-        background-color: rgb(129, 127, 8); // Initial color
-        &__frog {
-            display: inline-block;
-            position: absolute;
-            max-width: 20vh;
-            height: auto;
-            top: 4vh;
-            left: 70vh;
-            transform: translateX(-50%);
-            animation: jump 1s forwards;
-            animation-delay: 1s;
-            &:hover {
-                 transform: translateX(20vh); /* Move frog 100px to the right on hover */
+    font-size: 1vw;
+    font-family: sans-serif;
+    min-width: 100vw;
+    outline: 2px rgb(255, 14, 14);
     
-                 +.warning-box {
-                     visibility: visible; /* Show warning box when frog is hovered over */
-                 }
-             }
+    &__frame1{
+        outline: 2px rgb(255, 14, 14);
+        &__text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        &__container{
+            outline: 2px rgb(255, 14, 14);
+            &__frog{
+                display: inline-block;
+                position: absolute;
+                max-width: 10vw;
+                height: auto;
+                top: 10vw;
+                left: -50vw; /* Start position off the left side */
+                transform: translateX(-50%);
+                animation: jump-in 3s forwards;/* Use jump-in animation */
+                animation-iteration-count: 5s;
+                
+                &:hover {
+                    transform: translateX(20vh);
+                    // Use visibility property on the adjacent warning box
+                    + .section3__frame1__container__warning-box {
+                        visibility: visible;
+                    }
+                }
+            }
+            
+            &__warning-box{
+                position: absolute;
+                top: -20%; /* Distance from frog */
+                left: 30%; /* Distance from right edge */
+                background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+                color: white;
+                padding: 10px;
+                border-radius: 5px;
+                visibility: hidden; /* Initially hidden */
+                transition: visibility 0.3s ease;/* Add transition for smooth appearance */
+            }
+
         }
     }
-    &__house {
-        display: inline-block;
-        position: sticky;
-        bottom: 50vh;
-        z-index: 1;
+    
+    &__frame2{
+        outline: 2px rgb(255, 14, 14);
+        
+        &__text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        &__container{
+            outline: 2px rgb(255, 14, 14);
+            
+            &__action-button{
+                display: none;
+                position: fixed;
+                bottom: 75%;
+                right: 20%;
+                background-color: rgb(219, 139, 41);
+                padding: 20px 20px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            
+                &.show {
+                    display: block;
+                }
+
+            }
+            
+        }
+    }
+    
+    &__frame3{
+        outline: 2px rgb(255, 14, 14);
+
+        &__text{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        &__container{
+            outline: 2px rgb(255, 14, 14);
+            
+            &__moon{
+                display: inline;
+                position: absolute;
+                height: 20vh;
+                top: 245vh;
+                left: 130vh;
+            }
+            &__cat{
+                display: inline;
+                position: absolute;
+                width: 100vw;
+                height: 20vh;
+                top: 280vh;  
+                
+                &--walk{
+                    display: inline-block;
+                    position: absolute;
+                    max-width: 20vh;
+                    height: 20vh;
+                    left: 140vh;
+                    bottom: 10vh; // Start position off the bottom
+                    left: calc(0% - 10vh); // Center horizontally
+                    animation: move-cat 5s forwards, fade-out 2s 3s forwards; // Chain animations
+                    //animation-iteration-count: infinite;
+                    z-index: 2;
+                }
+            }
+            
+        }
     }
 }
 
-@keyframes jump {
-    0% { transform: translateX(-100vh); }
-    50% { transform: translateY(-15vh); }
-    100% { transform: translateY(5vh); }
-}
+.animate--on-visibility {
+    /* class will be used by JS intersection observer */
+  }
+  
+  .animate__animated, .animate__fadeInRight {
+    //CAT
+    @keyframes move-cat {
+        0% {
+            bottom: -5vh; // Start off the bottom
+            left: 100vh;
+        }
+        100% {
+            bottom: calc(75% - 5vh); // End position at the top corner
+            left: 5vh;
+        }
+    }
 
-.warning-box {
-    position: absolute;
-    top: -20%; /* Distance from frog */
-    left: 80%; /* Distance from right edge */
-    background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    visibility: hidden; /* Initially hidden */
-    transition: visibility 0.3s ease; /* Add transition for smooth appearance */
-}
+    @keyframes fade-out {
+        0% {
+            opacity: 1; // Start fully visible
+        }
+        100% {
+            opacity: 0; // End fully transparent
+        }
+    }
+        /* class and keyframes are defined by animate.css */
+    }
 
-.action-button {
-    display: none;
-    position: fixed;
-    bottom: 75%;
-    right: 20%;
-    background-color: rgb(219, 139, 41);
-    padding: 20px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.action-button.show {
-    display: block;
-}
-
-.section3__text1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.section3__text2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.section3__text3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
+    .animate__animated, .animate__fadeInLeft {
+        //FROG
+        @keyframes jump-in {
+        0% {
+            left: 10vw; /* Start off the left side */
+        }
+        100% {
+            left: 50vw; /* End position where it's supposed to be */
+        }
+        }
+        /* class and keyframes are defined by animate.css */
+      }
 // TORIL

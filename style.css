@@ -150,69 +150,49 @@
   font-style: normal;
 }
 
-.grass-container {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  height: 50vh;
-  background-color: rgb(129, 127, 8);
-}
-
 .section3 {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   position: relative;
-  background-color: skyblue;
-  color: rgb(68, 67, 67);
-  font-size: 20px;
+  font-size: 1vw;
+  font-family: sans-serif;
+  min-width: 100vw;
+  outline: 2px rgb(255, 14, 14);
 }
-.section3__grass-container {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  height: 50vh;
-  background-color: rgb(129, 127, 8);
+.section3__frame1 {
+  outline: 2px rgb(255, 14, 14);
 }
-.section3__grass-container__frog {
+.section3__frame1__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.section3__frame1__container {
+  outline: 2px rgb(255, 14, 14);
+}
+.section3__frame1__container__frog {
   display: inline-block;
   position: absolute;
-  max-width: 20vh;
+  max-width: 10vw;
   height: auto;
-  top: 4vh;
-  left: 70vh;
+  top: 10vw;
+  left: -50vw; /* Start position off the left side */
   transform: translateX(-50%);
-  animation: jump 1s forwards;
-  animation-delay: 1s;
+  animation: jump-in 3s forwards; /* Use jump-in animation */
+  animation-iteration-count: 5s;
 }
-.section3__grass-container__frog:hover {
-  transform: translateX(20vh); /* Move frog 100px to the right on hover */
+.section3__frame1__container__frog:hover {
+  transform: translateX(20vh);
 }
-.section3__grass-container__frog:hover + .warning-box {
-  visibility: visible; /* Show warning box when frog is hovered over */
+.section3__frame1__container__frog:hover + .section3__frame1__container__warning-box {
+  visibility: visible;
 }
-.section3__house {
-  display: inline-block;
-  position: sticky;
-  bottom: 50vh;
-  z-index: 1;
-}
-
-@keyframes jump {
-  0% {
-    transform: translateX(-100vh);
-  }
-  50% {
-    transform: translateY(-15vh);
-  }
-  100% {
-    transform: translateY(5vh);
-  }
-}
-.warning-box {
+.section3__frame1__container__warning-box {
   position: absolute;
   top: -20%; /* Distance from frog */
-  left: 80%; /* Distance from right edge */
+  left: 30%; /* Distance from right edge */
   background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
   color: white;
   padding: 10px;
@@ -220,8 +200,20 @@
   visibility: hidden; /* Initially hidden */
   transition: visibility 0.3s ease; /* Add transition for smooth appearance */
 }
-
-.action-button {
+.section3__frame2 {
+  outline: 2px rgb(255, 14, 14);
+}
+.section3__frame2__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.section3__frame2__container {
+  outline: 2px rgb(255, 14, 14);
+}
+.section3__frame2__container__action-button {
   display: none;
   position: fixed;
   bottom: 75%;
@@ -232,31 +224,82 @@
   border-radius: 5px;
   cursor: pointer;
 }
-
-.action-button.show {
+.section3__frame2__container__action-button.show {
   display: block;
 }
-
-.section3__text1 {
+.section3__frame3 {
+  outline: 2px rgb(255, 14, 14);
+}
+.section3__frame3__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
 }
-
-.section3__text2 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.section3__frame3__container {
+  outline: 2px rgb(255, 14, 14);
+}
+.section3__frame3__container__moon {
+  display: inline;
+  position: absolute;
+  height: 20vh;
+  top: 245vh;
+  left: 130vh;
+}
+.section3__frame3__container__cat {
+  display: inline;
+  position: absolute;
+  width: 100vw;
+  height: 20vh;
+  top: 280vh;
+}
+.section3__frame3__container__cat--walk {
+  display: inline-block;
+  position: absolute;
+  max-width: 20vh;
+  height: 20vh;
+  left: 140vh;
+  bottom: 10vh;
+  left: calc(0% - 10vh);
+  animation: move-cat 5s forwards, fade-out 2s 3s forwards;
+  z-index: 2;
 }
 
-.section3__text3 {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.animate--on-visibility {
+  /* class will be used by JS intersection observer */
+}
+
+.animate__animated, .animate__fadeInRight {
+  /* class and keyframes are defined by animate.css */
+}
+@keyframes move-cat {
+  0% {
+    bottom: -5vh;
+    left: 100vh;
+  }
+  100% {
+    bottom: calc(75% - 5vh);
+    left: 5vh;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.animate__animated, .animate__fadeInLeft {
+  /* class and keyframes are defined by animate.css */
+}
+@keyframes jump-in {
+  0% {
+    left: 10vw; /* Start off the left side */
+  }
+  100% {
+    left: 50vw; /* End position where it's supposed to be */
+  }
 }/*# sourceMappingURL=style.css.map */

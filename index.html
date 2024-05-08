@@ -96,35 +96,45 @@
 
     <!--TORIL-->
     <section class="section3">
-      <div class="section3__text1 scroll--one" data-hidden="hidden__scroll">
-        <p>Do <em>not move</em> or <em>frogs</em>, they are sensitive</p>
-        <p>(Try moving the pointer to the frog)</p>
+      <div class="section3__frame1">
+          <div class="section3__frame1__text">
+              <h2>Do <em>not move</em> or <em>frogs</em>, they are sensitive</h2>
+              <h2>(Try moving the pointer to the frog)</h2>
+          </div>
+          <div class="section3__frame1__container">
+              <img class="section3__frame1__container__frog" src="assets/SVG/frog.svg">
+              <div class="section3__frame1__container__warning-box">Don't touch or move frogs!</div>
+          </div>
       </div>
 
-      <div class="section3__text2 scroll--two" data-hidden="hidden__scroll">
-        <p>Make a <em>good habitat</em> for the frogs to live in</p>
-        <p>It is also <em>good</em> for the <em>environment</em></p>
+      <div class="section3__frame2">
+          <div class="section3__frame2__text">
+              <h2>Make a <em>good habitat</em> for the frogs to live in</h2>
+              <h2>It is also <em>good</em> for the <em>environment</em></h2>
+          </div>
+          <div class="section3__frame2__container">
+              <button class="section3__frame2__container__action-button" onclick="addImagesToGrass()">Click to add a rock, tree, leavs and the pond</button>
+          </div>
       </div>
 
-      <div class="section3__text3 scroll--three" data-hidden="hidden__scroll">
-        <p>Do not let your cat be outside at night</p>
-        <p>They are known to kill not only frogs, but also other small animals that are essential to our ecosystem</p>
+      <div class="section3__frame3">
+          <div class="section3__frame3__text">
+              <h2>Do not let your cat be outside at night</h2>
+              <h2>They are known to kill not only frogs, but also other small animals that are essential to our ecosystem</p>
+          </div>
+          <div class="section3__frame3__container">
+              <img class="section3__frame3__container__moon" src="assets/SVG/moon.svg">
+              <div class="section3__frame3__container__cat">
+                  <img class="section3__frame3__container__cat--walk" animate--on-visibility data-animationclass="animate__fadeInRight" src="assets/SVG/cat.svg">
+              </div>
+          </div>
       </div>
-
-    <!-- House outside of the footer so it is palced on the grass -->
-      <svg class="section3__house" width="300" height="450">
-        <rect x="20" y="200" width="275" height="250" style="fill: red;"/>  
-        <polygon points="165,115,300,200,15,200" fill="grey"/>  
-      </svg>
-
-      <section class="section3__grass-container">
-        <img class="section3__grass-container__frog" src="assets/SVG/frog.svg"><!-- Inserted as img because it's going to be static-->
-        <div class="warning-box">Don't touch or move frogs!</div> 
-        <button class="action-button" onclick="addImagesToGrass()">Click to add rocks, logs, leavs and the pond</button>
-      </section>
+      <div class="section3__frame4">
+        <div class="section3__frame4__text">
+          <h2>By <em>helping</em> the frogs with keeping their habitat clean, you will be <em>contributing</em> on the <em>UN's 15 Sustainability goal!</em></h2>
+        </div>
+      </div>
   </section>
-
-
 <!--TORIL-->
 
 </body>

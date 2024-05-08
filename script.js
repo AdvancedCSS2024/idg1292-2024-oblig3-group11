@@ -51,51 +51,10 @@ animatedElements.forEach((el) => {
 
 //TORIL
 
-
-// Intersection Observer to trigger animation when frog and text are in view
-const frogJump = document.querySelector('.section3__grass-container__frog');
-
-const observeJump = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('jump');
-        } else {
-            entry.target.classList.remove('jump');
-        }
-    })
-}, {
-    threshold: 1
-});
-
-
-//Text boxes
-document.addEventListener("DOMContentLoaded", function() {
-    window.addEventListener("scroll", function() {
-        const scrollTop = window.scrollY;
-
-        // Values according to scroll position
-        const thresholdStart = 3000; //Change to correct placement
-
-        const grass = document.querySelector(".section3__grass-container");
-
-        if (scrollTop >= thresholdStart && window.scrollY > 100) { //Change to correct placement
-            // Color change when scrolling within the threshold
-            grass.style.backgroundColor = "green";
-            scrollGrass.classList.add("show");
-        } else {
-            // Reset to initial color when scrolling outside the threshold
-            grass.style.backgroundColor = "rgb(129, 127, 8)";
-            scrollGrass.classList.remove("show")
-        }
-
-        
-    });
-});
-
 //Action button
 window.addEventListener("scroll", function() {
-    const scrollButton = document.querySelector(".action-button");
-    if (window.scrollY > 3000 && window.scrollY < 3200) {
+    const scrollButton = document.querySelector(".section3__frame2__container__action-button");
+    if (window.scrollY > 3000 && window.scrollY < 3300) {
         scrollButton.classList.add("show");
     } else {
         scrollButton.classList.remove("show");
@@ -109,7 +68,7 @@ function addImagesToGrass() {
     const image2Coordinates = { x: 1000, y: 5 }; // Adjust as needed
     const image3Coordinates = { x: 300, y: -300 };
 
-    const grassContainer = document.querySelector(".section3__grass-container");
+    const grassContainer = document.querySelector(".section3__frame2");
     
     // Create image elements
     let image1 = document.createElement("img");
@@ -159,5 +118,79 @@ function addImagesToGrass() {
     removeImagesFromGrass.observe(image3);
 }
 
+// Function to check if an element is in the viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+// Frog animation
+const observeFrog = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+      const frog = entry.target.querySelector('.section3__frame1__container__frog');
+
+      if (entry.isIntersecting) {
+          frog.classList.add('jump-in');
+      } else {
+          frog.classList.remove('jump-in');
+      }
+  });
+}, { threshold: 0.5 }); // Adjust threshold as needed
+
+observeFrog.observe(document.querySelector('.section3__frame1__container'));
+
+
+//cat animation
+const observeCat = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const catwalk = entry.target.querySelector('section3__frame3__container__cat--walk');
+  
+      if (entry.isIntersecting) {
+        catwalk.classList.add('move-cat, fade-out');
+        return; // if we added the class, exit the function
+      }
+  
+      // We're not intersecting, so remove the class!
+      catwalk.classList.remove('move-cat, fade-out');
+    });
+  });
+
+  observeCat.observe(document.querySelector('.section3__frame3__container'));
+
+
+  //DEV example https://dev.to/ingosteinke/movement-and-visibility-detection-with-css-and-js-53m7
+  let animatingClassName = 'animate__animated';
+
+let observerOptions = {
+  root: null,
+  /** @type {String} */
+  rootMargin: '0px',
+  /** @type {Number} */
+  threshold: 0.2
+};
+
+function intersectionCallback(intersectingEntries) {
+  for (let j = 0; j < intersectingEntries.length; j++) {
+    if (intersectingEntries[j].isIntersecting && intersectingEntries[j].intersectionRatio > observerOptions.threshold) {
+      if (intersectingEntries[j].target && intersectingEntries[j].target.classList) {
+        let animationClassName = intersectingEntries[j].target.dataset.animationclass;
+        intersectingEntries[j].target.classList.add(animatingClassName, animationClassName);
+      }
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  let observer = new IntersectionObserver(intersectionCallback, observerOptions);
+  let elementsAnimatedOnVisibility = document.getElementsByClassName('animate--on-visibility');
+  for (let i = 0; i < elementsAnimatedOnVisibility.length; i++) {
+    observer.observe(elementsAnimatedOnVisibility[i]);
+  }
+});
 
 //TORIL
