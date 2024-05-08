@@ -660,18 +660,18 @@ p {
     position: relative;
     &__action-button{
         display: none;
-                position: fixed;
-                bottom: 75%;
-                right: 20%;
-                background-color: rgb(219, 139, 41);
-                padding: 20px 20px;
-                border: none;
-                border-radius: 5px;
-                cursor: pointer;
-            
-                &.show {
-                    display: block;
-                }
+        position: fixed;
+        bottom: 65%;
+        right: 30%;
+        background-color: rgb(219, 139, 41);
+        padding: 20px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    
+        &.show {
+            display: block;
+        }
     }
 }
 
@@ -681,26 +681,29 @@ p {
     &__moon{
         width: 20vh;
         left: 70vw;
-        top: 10vw;
+        top: 0vw;
         position: absolute;
     }
-    &__cat{
-        width: 10vw;
+    &__cat--walk{
         left: 70vw;
-        top: 60vw;
+        top: 25vw;
+        display: inline-block;
         position: absolute;
-    }
-    &--walk{
+        max-width: 20vh;
+        height: 20vh;
+        left: 15vw;
+        bottom: -10vw; // Start position off the bottom
+        animation: move-cat 5s forwards, fade-out 2s 3s forwards; // Chain animations
 
     }
 }
 @keyframes move-cat {
     0% {
-        bottom: -5vh; // Start off the bottom
-        left: 100vh;
+        bottom: 5vw; // Start off the bottom
+        left: 100vw;
     }
     100% {
-        bottom: calc(75% - 5vh); // End position at the top corner
+        bottom: calc(75% - 15vw); // End position at the top corner
         left: 5vh;
     }
 }

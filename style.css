@@ -555,8 +555,8 @@ p {
 .frog-habitat__action-button {
   display: none;
   position: fixed;
-  bottom: 75%;
-  right: 20%;
+  bottom: 65%;
+  right: 30%;
   background-color: rgb(219, 139, 41);
   padding: 20px 20px;
   border: none;
@@ -574,22 +574,28 @@ p {
 .cat-walk__moon {
   width: 20vh;
   left: 70vw;
-  top: 10vw;
+  top: 0vw;
   position: absolute;
 }
-.cat-walk__cat {
-  width: 10vw;
+.cat-walk__cat--walk {
   left: 70vw;
-  top: 60vw;
+  top: 25vw;
+  display: inline-block;
   position: absolute;
+  max-width: 20vh;
+  height: 20vh;
+  left: 15vw;
+  bottom: -10vw;
+  animation: move-cat 5s forwards, fade-out 2s 3s forwards;
 }
+
 @keyframes move-cat {
   0% {
-    bottom: -5vh;
-    left: 100vh;
+    bottom: 5vw;
+    left: 100vw;
   }
   100% {
-    bottom: calc(75% - 5vh);
+    bottom: calc(75% - 15vw);
     left: 5vh;
   }
 }

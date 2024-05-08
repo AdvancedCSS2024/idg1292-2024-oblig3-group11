@@ -75,11 +75,11 @@ window.addEventListener("scroll", function() {
 
 // // Function to add image elements to the grass box
 function addImagesToGrass() {
-  const image1Coordinates = { x: 800, y: 250 };
-  const image2Coordinates = { x: 1000, y: 5 };
-  const image3Coordinates = { x: 300, y: -300 };
+  const image1Coordinates = { x: 800, y: 400 };
+  const image2Coordinates = { x: 1000, y: 20 };
+  const image3Coordinates = { x: 300, y: -100 };
 
-  const grassContainer = document.querySelector(".frog-habitat");
+  const grassContainer = document.querySelector(".frog-habitat, .cat-walk");
 
   let image1 = document.createElement("img");
   let image2 = document.createElement("img");
