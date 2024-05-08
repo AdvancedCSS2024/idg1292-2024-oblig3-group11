@@ -570,17 +570,29 @@ p {
   position: absolute;
 }
 .cat-walk__cat {
-  display: inline-block;
+  width: 10vw;
+  left: 70vw;
+  top: 60vw;
   position: absolute;
-  max-width: 20vh;
-  height: 20vh;
-  left: 140vh;
-  bottom: 10vh;
-  left: calc(0% - 10vh);
-  animation: move-cat 5s forwards, fade-out 2s 3s forwards;
-  z-index: 2;
 }
-
+@keyframes move-cat {
+  0% {
+    bottom: -5vh;
+    left: 100vh;
+  }
+  100% {
+    bottom: calc(75% - 5vh);
+    left: 5vh;
+  }
+}
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .unsg {
   display: block;
   position: relative;
