@@ -634,7 +634,8 @@ p {
 //TORIL
 
 .touch-frog {
-    display: relative;
+    display: block;
+    position: relative;
     height: 100vh;
     &__frog {
         width: 10vw;
@@ -646,16 +647,16 @@ p {
 }
 
 .frog-habitat {
-    display: relative;
-    height: 100vh;
+    display: block;
+    position: relative;
 }
 
 .cat-walk {
-    display: relative;
-    height: 100vh;
+    display: block;
+    position: relative;
     &__moon{
         width: 20vh;
-        left: 100vw;
+        left: 70vw;
         top: 10vw;
         position: absolute;
     }
@@ -668,7 +669,8 @@ p {
 }
 
 .unsg {
-    display: relative;
+    display: block;
+    position: relative;
     height: 100vh;
     &__frog{
         width: 10vw;
