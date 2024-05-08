@@ -1,32 +1,10 @@
-/*gsap.set("#frog", {xPercent: -50, yPercent: -50});
-gsap.to("#frog", {scale: 0.6667, scrollTrigger: {
-  trigger: ".section1__frame3",
-  pin: ".section1__frame3",
-  scrub: true
-}})*/ 
-
-// Alexis code 
-// const sectionEls = document.querySelectorAll("[data-hidden]");
-
-// const options = {
-// 	rootMargin: "-20%",
-// };
-
-// const observer = new IntersectionObserver(entries=>{
-// 	entries.forEach(entry=>{
-// 		if(entry.isIntersecting){
-// 			entry.target.classList.remove(entry.target.dataset.hidden);
-// 		}else{
-// 			entry.target.classList.add(entry.target.dataset.hidden);
-// 		}
-// 	});
-// }, options);
-
-// sectionEls.forEach(el=>observer.observe(el));
-
 //SANNA  
 // Get all text elements with the class 'text-fade'
 const textElements = document.querySelectorAll('.text-fade');
+// Get the frog element
+const frog = document.querySelector('.frog');
+// Get the circle element
+const circle = document.querySelector('.circle');
 
 // Function to check if an element is within the viewport
 function isInViewport(element) {
@@ -46,6 +24,15 @@ function handleScroll() {
             element.classList.remove('fade-in');
         }
     });
+
+    // Check if the frog is in viewport
+    if (isInViewport(frog)) {
+        circle.classList.add('show-circle');
+        // Position the circle around the frog here
+        // You can calculate the position based on the frog's position
+    } else {
+        circle.classList.remove('show-circle');
+    }
 }
 
 // Scroll event listener
@@ -54,9 +41,49 @@ window.addEventListener('scroll', handleScroll);
 
 
 
+
+//frog 
+// Create the observer
+/*const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('frog-animation');
+        return;
+      }
+  
+      entry.target.classList.remove('frog-animation');
+    });
+  });
+  
+  // Get multiple elements instead of a single one using "querySelectorAll"
+  const squares = document.querySelectorAll('.frog');
+  
+  // Loop over the elements and add each one to the observer
+  squares.forEach((element) => observer.observe(element));*/
+
+
+//algae disappear 
+// Get the elements
+const elements = document.querySelectorAll('.algae1, .algae2');
+
+// Function to trigger disappearance after a delay
+function disappearAfterDelay(delay) {
+  setTimeout(() => {
+    elements.forEach(element => {
+      element.classList.add('disappear');
+    });
+  }, delay);
+}
+
+disappearAfterDelay(3000); // Disappears after 3 seconds (3000 milliseconds)
+
+
+//SANNA
+
+
 // KAJA
 
-const animatedElements = document.querySelectorAll('.animate-on-scroll-heading, .animate-on-scroll-road, .animate-on-scroll-pond, .animate-on-scroll-leaf');
+/*const animatedElements = document.querySelectorAll('.animate-on-scroll-heading, .animate-on-scroll-road, .animate-on-scroll-pond, .animate-on-scroll-leaf');
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -74,7 +101,7 @@ const observer = new IntersectionObserver((entries) => {
 
 animatedElements.forEach((el) => {
     observer.observe(el);
-});
+});*/
 
 
 //TORIL

@@ -1,8 +1,8 @@
-* {
+/* *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-}
+}*/
 
 .section1 {
     min-height: 100vh;
@@ -15,12 +15,12 @@
 
     .text-fade {
         max-height: 50px;
-        //margin-top: 100vh;
-        //margin-bottom: 100vh;
-        //padding-top: 10vh;
+        margin-top: 50vh;
+        //margin-bottom: 50vh;
+        padding-top: 10vh;
         position: sticky;
-        //top: 10vh;
-        //bottom: 0;
+        top: 10vh;
+        bottom: 0;
         text-align: center;
         transition: opacity 0.5s ease;
         opacity: 0;
@@ -30,8 +30,9 @@
         opacity: 1;
     }
 
-
     &__frame1 {
+        outline: auto;
+        //height: 100vh;
         position: relative;
 
         h2 {
@@ -39,41 +40,119 @@
             text-align: center;
         }
 
-        #frog {
-            position: absolute;
+        .frog {
+            position: relative;
             width: 10vw;
             left: 43vw;
             top: 15vw;
             z-index: 1;
+            /*opacity: 0;
+            animation: fadeInFrog 2s 1s ease forwards; Fade in animation for frog after 1 second delay */
         }
+
+        /*@keyframes fadeInFrog {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }*/
+
+        /*@keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20vw);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @media (frog) {
+            .frog {
+                animation:
+                    bounce 1.5s,
+                animation-delay 0.5s, 4s;
+            }
+        }
+
+        .frog-animation {
+            opacity: 1;
+        }*/
 
         .pond-leaf {
-            position: absolute;
+            position: relative;
             width: 12vw;
             left: 42vw;
-            top: 18vw;
+            top: 11vw;
+        }
+
+        @keyframes rotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        
+        .circle {
+            position: absolute;
+            width: 40vw;
+            left: 28vw;
+            top: 40vw;
+            animation: rotate 5s linear infinite; /* Adjust the duration and timing function as needed */
         }
     }
+   
+    /*&__frame2 {
+        position: relative;
 
-     *&__frame2 {
+    }*/
 
-    }*
-
-     &__frame3 {
-
+    &__frame3 {
+        outline: auto;
+        position: relative;
         .pond {
             position:relative;
             z-index: -1;
-            width: 100vw;
-            left: 30vw;
-            top: 18vw;
+            width: 60vw;
+            left: 20vw;
+            top: 15vw;
+        }       
+
+        .algae1 {
+            position:absolute;
+            margin-top: 24vw;
+            width: 5vw;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
         }
 
+        .algae2 {
+            position:absolute;
+            margin-top: 24vw;
+            width: 10vw;
+            right: 60vw;
+            opacity: 1;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        
+        .algae1.disappear {
+            opacity: 0;
+        }
+        .algae2.disappear {
+            opacity: 0;
+        }
+        /*.fish {
+            position: relative;
+            width: 10vw;
+        }*/
     }
-
-    /* &__frame4 {
-
-    }*/
 }
 
 .section2 {

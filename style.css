@@ -1,15 +1,12 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
+/* *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}*/
 .section1 {
   min-height: 100vh;
   /*&__frame2 {
-
-  }*/
-  /* &__frame4 {
+      position: relative;
 
   }*/
 }
@@ -20,9 +17,11 @@
 }
 .section1 .text-fade {
   max-height: 50px;
-  margin-top: 100vh;
+  margin-top: 50vh;
+  padding-top: 10vh;
   position: sticky;
   top: 10vh;
+  bottom: 0;
   text-align: center;
   transition: opacity 0.5s ease;
   opacity: 0;
@@ -31,31 +30,109 @@
   opacity: 1;
 }
 .section1__frame1 {
+  outline: auto;
   position: relative;
+  /*@keyframes fadeInFrog {
+      from {
+          opacity: 0;
+      }
+      to {
+          opacity: 1;
+      }
+  }*/
+  /*@keyframes bounce {
+      0% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-20vw);
+      }
+      100% {
+          transform: translateY(0);
+      }
+  }
+
+  @media (frog) {
+      .frog {
+          animation:
+              bounce 1.5s,
+          animation-delay 0.5s, 4s;
+      }
+  }
+
+  .frog-animation {
+      opacity: 1;
+  }*/
 }
 .section1__frame1 h2 {
   position: absolute;
   text-align: center;
 }
-.section1__frame1 #frog {
-  position: absolute;
+.section1__frame1 .frog {
+  position: relative;
   width: 10vw;
   left: 43vw;
   top: 15vw;
   z-index: 1;
+  /*opacity: 0;
+  animation: fadeInFrog 2s 1s ease forwards; Fade in animation for frog after 1 second delay */
 }
 .section1__frame1 .pond-leaf {
-  position: absolute;
+  position: relative;
   width: 12vw;
   left: 42vw;
-  top: 18vw;
+  top: 11vw;
 }
-.section1__frame3 img.pond {
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.section1__frame1 .circle {
+  position: absolute;
+  width: 40vw;
+  left: 28vw;
+  top: 40vw;
+  animation: rotate 5s linear infinite; /* Adjust the duration and timing function as needed */
+}
+.section1__frame3 {
+  outline: auto;
+  position: relative;
+  /*.fish {
+      position: relative;
+      width: 10vw;
+  }*/
+}
+.section1__frame3 .pond {
   position: relative;
   z-index: -1;
-  width: 40vw;
-  left: 30vw;
-  top: 18vw;
+  width: 60vw;
+  left: 20vw;
+  top: 15vw;
+}
+.section1__frame3 .algae1 {
+  position: absolute;
+  margin-top: 24vw;
+  width: 5vw;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.section1__frame3 .algae2 {
+  position: absolute;
+  margin-top: 24vw;
+  width: 10vw;
+  right: 60vw;
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+.section1__frame3 .algae1.disappear {
+  opacity: 0;
+}
+.section1__frame3 .algae2.disappear {
+  opacity: 0;
 }
 
 .section2__frame1 {
