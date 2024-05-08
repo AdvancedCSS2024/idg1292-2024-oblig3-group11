@@ -645,6 +645,15 @@ p {
     }
     
 }
+    //FROG
+    @keyframes jump-in {
+    0% {
+        left: 10vw; /* Start off the left side */
+    }
+    100% {
+        left: 50vw; /* End position where it's supposed to be */
+    }
+    }
 
 .frog-habitat {
     display: block;
