@@ -676,10 +676,16 @@ p {
         position: absolute;
     }
     &__cat{
-        width: 10vw;
-        left: 70vw;
-        top: 60vw;
+        display: inline-block;
         position: absolute;
+        max-width: 20vh;
+        height: 20vh;
+        left: 140vh;
+        bottom: 10vh; // Start position off the bottom
+        left: calc(0% - 10vh); // Center horizontally
+        animation: move-cat 5s forwards, fade-out 2s 3s forwards; // Chain animations
+        //animation-iteration-count: infinite;
+        z-index: 2;
     }
 }
 

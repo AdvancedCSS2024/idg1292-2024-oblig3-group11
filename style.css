@@ -570,10 +570,15 @@ p {
   position: absolute;
 }
 .cat-walk__cat {
-  width: 10vw;
-  left: 70vw;
-  top: 60vw;
+  display: inline-block;
   position: absolute;
+  max-width: 20vh;
+  height: 20vh;
+  left: 140vh;
+  bottom: 10vh;
+  left: calc(0% - 10vh);
+  animation: move-cat 5s forwards, fade-out 2s 3s forwards;
+  z-index: 2;
 }
 
 .unsg {
