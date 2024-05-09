@@ -58,7 +58,7 @@ const options = {
   // Loop through each element in section 1 and section 2 and observe them
 
 
-document.querySelectorAll(".introduction, .important, .ecosystem, .habitat-loss, .pollution, .touch-frog, .frog-habitat, .cat-walk, .unsg").forEach(sectionEl=>observer.observe(sectionEl));
+document.querySelectorAll(".introduction, .important, .ecosystem, .challenges, .habitat-loss, .pollution, .disease, .apocalypse, .what-can-you-do, .touch-frog, .frog-habitat, .cat-walk, .unsg").forEach(sectionEl=>observer.observe(sectionEl));
 
 
 //TORIL
