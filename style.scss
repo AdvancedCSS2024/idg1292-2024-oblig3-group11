@@ -65,7 +65,7 @@ p {
         animation-fill-mode: forwards;
     }
 
-    // forg 2, 3 and 4 enter from the right 
+    // forg 2, 3 and 4 enter from the right
     &__frog--2 {
         position: absolute;
         width: 10vw;
@@ -101,7 +101,7 @@ p {
         opacity: 0;
         animation:
             enter-frog4 1s 1s,
-            bounce2 ;
+            bounce2;
         animation-fill-mode: forwards;
     }
 
@@ -115,7 +115,7 @@ p {
         opacity: 0;
         animation:
             enter-frog5 2s 3s,
-            bounce2 ;
+            bounce2;
         animation-fill-mode: forwards;
     }
 
@@ -136,82 +136,90 @@ p {
         }
     }
 
-    @keyframes enter-frog2 {
-        0% {
-            transform: translateX(200%);
-            opacity: 0;
+    &__pond-leaf {
+        position: absolute;
+        width: 12vw;
+        left: 42vw;
+        top: 11vw;
+        animation: fadeIn 2s 1s ease forward;
+
+        @keyframes enter-frog2 {
+            0% {
+                transform: translateX(200%);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateX(0) translateY(-150%);
+            }
+
+            100% {
+                transform: translate(0);
+                opacity: 1;
+            }
         }
 
-        20% {
-            opacity: 1;
-            transform: translateX(0) translateY(-150%);
+        @keyframes enter-frog3 {
+            0% {
+                transform: translateX(200%);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateX(0) translateY(-100%);
+            }
+
+            100% {
+                transform: translate(0);
+                opacity: 1;
+            }
         }
 
-        100% {
-            transform: translate(0);
-            opacity: 1;
+        @keyframes enter-frog4 {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateX(200%) translateY(-100%);
+            }
+
+            100% {
+                transform: translate(0);
+                opacity: 1;
+            }
         }
+
+        @keyframes enter-frog5 {
+            0% {
+                transform: translateX(0);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+                transform: translateX(200%) translateY(-100%);
+            }
+
+            100% {
+                transform: translate(200%);
+                opacity: 1;
+            }
+        }
+
+        // @keyframes fadeIn {
+        //     from {
+        //         opacity: 0;
+        //     }
+        //     to {
+        //         opacity: 1;
+        //     }
+        // }
     }
-
-    @keyframes enter-frog3 {
-        0% {
-            transform: translateX(200%);
-            opacity: 0;
-        }
-
-        20% {
-            opacity: 1;
-            transform: translateX(0) translateY(-100%);
-        }
-
-        100% {
-            transform: translate(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes enter-frog4 {
-        0% {
-            transform: translateX(0);
-            opacity: 0;
-        }
-
-        20% {
-            opacity: 1;
-            transform: translateX(200%) translateY(-100%);
-        }
-
-        100% {
-            transform: translate(0);
-            opacity: 1;
-        }
-    }
-
-    @keyframes enter-frog5 {
-        0% {
-            transform: translateX(0);
-            opacity: 0;
-        }
-
-        20% {
-            opacity: 1;
-            transform: translateX(200%) translateY(-100%);
-        }
-
-        100% {
-            transform: translate(200%);
-            opacity: 1;
-        }
-    }
-
-    // @keyframes fadeIn {
-    //     from {
-    //         opacity: 0;
-    //     }
-    //     to {
-    //         opacity: 1;
-    //     }
-    // }
 }
 
 .ecosystem {
@@ -275,7 +283,7 @@ p {
         transform: rotate(140deg);
         animation: fadeOut 0.5s 3s ease-in-out forwards;
     }
-    
+
     &__algae3 {
         position: absolute;
         top: 30vw;
@@ -325,7 +333,7 @@ p {
         top: 30vh;
         right: 40vw;
         width: 4vh;
-        animation: flyAround 5s linear forwards; 
+        animation: flyAround 5s linear forwards;
     }
 
     &__mosquito--5 {
@@ -341,7 +349,7 @@ p {
             transform: translateX(1800px) translateY(0);
         }
         100% {
-          transform: translateX(-200px) translateY(100px);
+            transform: translateX(-200px) translateY(100px);
         }
     }
 
@@ -1329,7 +1337,7 @@ p {
 
 //TORIL
 
-.to-do{
+.to-do {
     display: block;
     position: relative;
 }
@@ -1342,17 +1350,30 @@ p {
         width: 10vw;
         left: 45vw;
         top: 30vw;
-        position: absolute;    
-        
+        position: absolute;
+
         &:hover {
-        transform: translateX(20vh);
-        // Use visibility property on the adjacent warning box
+            transform: translateX(20vh);
+            // Use visibility property on the adjacent warning box
             + .touch-frog__warning-box {
                 visibility: visible;
             }
         }
     }
-    &__warning-box{
+    &__warning-box {
+        position: absolute;
+        top: 20%; /* Distance from frog */
+        left: 30%; /* Distance from right edge */
+        background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
+        color: white;
+        padding: 10px;
+        border-radius: 5px;
+        visibility: hidden; /* Initially hidden */
+        transition: visibility 0.3s ease; /* Add transition for smooth appearance */
+        z-index: 1;
+    }
+}
+.touch-frog__warning-box {
     position: absolute;
     top: 20%; /* Distance from frog */
     left: 30%; /* Distance from right edge */
@@ -1361,42 +1382,25 @@ p {
     padding: 10px;
     border-radius: 5px;
     visibility: hidden; /* Initially hidden */
-    transition: visibility 0.3s ease;/* Add transition for smooth appearance */
+    transition: visibility 0.3s ease; /* Add transition for smooth appearance */
     z-index: 1;
 }
 
-}     
-.touch-frog__warning-box{
-    position: absolute;
-    top: 20%; /* Distance from frog */
-    left: 30%; /* Distance from right edge */
-    background-color: rgba(255, 0, 0, 0.8); /* Red with transparency */
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    visibility: hidden; /* Initially hidden */
-    transition: visibility 0.3s ease;/* Add transition for smooth appearance */
-    z-index: 1;
-}
-
-
-    
-
-    //FROG
-    @keyframes jump-in {
+//FROG
+@keyframes jump-in {
     0% {
         left: 10vw; /* Start off the left side */
     }
     100% {
         left: 50vw; /* End position where it's supposed to be */
     }
-    }
+}
 
 .frog-habitat {
     display: block;
     position: relative;
     height: 100vh;
-    &__action-button{
+    &__action-button {
         display: none;
         position: fixed;
         top: 5vw;
@@ -1406,7 +1410,7 @@ p {
         border: none;
         border-radius: 5px;
         cursor: pointer;
-    
+
         &.show {
             display: block;
         }
@@ -1417,7 +1421,7 @@ p {
     display: block;
     position: relative;
     height: 100vh;
-    &__night{
+    &__night {
         position: absolute;
         top: 0;
         left: 0;
@@ -1425,15 +1429,15 @@ p {
         height: 110%;
         background-position: center;
         animation: night-sky 8s 2s;
-        animation-fill-mode: forwards;;
+        animation-fill-mode: forwards;
     }
-    &__moon{
+    &__moon {
         width: 20vh;
         left: 80vw;
         top: 0vw;
         position: absolute;
     }
-    &__cat--walk{
+    &__cat--walk {
         left: 70vw;
         top: 25vw;
         display: inline-block;
@@ -1442,8 +1446,9 @@ p {
         height: 20vh;
         left: 15vw;
         bottom: -10vw; // Start position off the bottom
-        animation: move-cat 5s forwards, fade-out 2s 3s forwards; // Chain animations
-
+        animation:
+            move-cat 5s forwards,
+            fade-out 2s 3s forwards; // Chain animations
     }
 }
 @keyframes move-cat {
@@ -1467,11 +1472,11 @@ p {
 }
 
 @keyframes night-sky {
-    0%{
+    0% {
         background-color: transparent;
     }
 
-    40%{
+    40% {
         background-color: rgba($color: #1d1f33, $alpha: 0.7);
     }
 
@@ -1484,7 +1489,7 @@ p {
     display: block;
     position: relative;
     height: 100vh;
-    &__frog{
+    &__frog {
         width: 30vw;
         left: 50vw;
         top: 23vw;
@@ -1497,17 +1502,17 @@ p {
         top: 10vw;
         position: absolute;
         animation: slideInFromLeft 1.5s forwards; /* Apply the animation */
-      }
-      
-      @keyframes slideInFromLeft {
+    }
+
+    @keyframes slideInFromLeft {
         from {
-          left: -40vw; /* Starting position outside the viewport */
+            left: -40vw; /* Starting position outside the viewport */
         }
         to {
-          left: 5vw; /* Final position */
+            left: 5vw; /* Final position */
         }
-      }
-    &__text{
+    }
+    &__text {
         position: absolute;
         top: 44vw;
         left: 5vw;
