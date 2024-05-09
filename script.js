@@ -1,27 +1,3 @@
-// SANNA 
-
-//const sectionElintroduction = document.querySelector("#introduction");
-//const sectionElimportant = document.querySelector("#important");
-//const sectionElecosystem = document.querySelector("#ecosystem");
-
-// KAJA
-
-//const sectionElhabitatLoss = document.querySelector('.habitat-loss');
-// const pollution = document.querySelector('#pollution');
-// const diseases = document.querySelector('#diseases');
-// const apocalypse = document.querySelector('#apocalypse'); 
-
-// TORIL
-
-// const notTouchFrog = document.querySelector('#not-touch-frog');
-// const goodHabitat = document.querySelector('#good-habitat');
-// const noCats = document.querySelector('#no-cats');
-// const sustainabilityGoal = document.querySelector('#sustainability-goal')
-
-// const animateStructure = {
-//     section: sectionElJumpging,
-//     el1toanimate: ""
-// }
 
 // Options for the IntersectionObserver
 const options = {
@@ -38,15 +14,14 @@ const options = {
         // const class2include = el2animate.dataset.classToToggle;
       if (entry.isIntersecting) {
         // If the element is in view, add animation class
-        // els2animate.forEach(el=>el.classList.remove('animation-pause'));
         els2animate.forEach(el=>el.style["animation-play-state"] = "running");
-        els2animate.forEach(el=>el.style["border"] = "1px red solid");
+        // els2animate.forEach(el=>el.style["border"] = "1px red solid");
         console.log(entry.target.id, "is intersecting");
       } else {
         // If the element is out of view, remove animation class
         // els2animate.forEach(el=>el.classList.add('animation-pause'));
         els2animate.forEach(el=>el.style["animation-play-state"] = "paused");
-        els2animate.forEach(el=>el.style["border"] = "unset");
+        // els2animate.forEach(el=>el.style["border"] = "unset");
         console.log(entry.target.id, "is nnot intersecting");
       }
     });

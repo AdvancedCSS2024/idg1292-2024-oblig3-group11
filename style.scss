@@ -28,7 +28,7 @@ p {
 }
 
 .spacer {
-    height: 250px;
+    height: 100px;
     // background-color: rgba($color: #000000, $alpha: 0.5);
 }
 
@@ -41,7 +41,7 @@ p {
     h1 {
         text-align: center;
         font-size: 7vw;
-        animation: heading1 3s;
+        animation: heading1 4s;
     }
 }
 
@@ -377,7 +377,7 @@ p {
         font-size: 3vw;
         padding: 20% 20%;
         position: absolute;
-        animation: break-message 2s forwards;
+        animation: break-message 1s forwards;
     }
 }
 
@@ -399,7 +399,7 @@ p {
         font-size: 2.5vw;
         position: absolute;
         padding: 5%;
-        top: 5vw;
+        top: 1vw;
         right: 7vw;
         z-index: 3;
         opacity: 0;
@@ -640,28 +640,12 @@ p {
         font-size: 2.5vw;
         padding: 5%;
         position: absolute;
-        top: 2vw;
+        top: 1vw;
         right: 2vw;
         z-index: 0;
         opacity: 0;
-        animation: heading2 2s;
+        animation: heading1 2s;
         animation-fill-mode: forwards;
-    }
-
-    @keyframes heading2 {
-        0% {
-            opacity: 0;
-            // transform: translateX(-200);
-        }
-
-        5% {
-            // opacity: 1;
-        }
-
-        100% {
-            opacity: 1;
-            // transform: translate(0);
-        }
     }
 
     &__frog2 {
@@ -675,7 +659,6 @@ p {
         animation:
             enter2 0.6s 2s,
             bounce2 1.5s 4s 2;
-        // escape 0.5s 7s;
         animation-fill-mode: forwards;
     }
 
@@ -1127,7 +1110,7 @@ p {
             fill: #9c7373;
         }
         100% {
-            fill: #843b3b;
+            fill: #c55252;
         }
     }
 
@@ -1159,7 +1142,7 @@ p {
             fill: #9fd18f;
         }
         50% {
-            fill: #a2aa46;
+            fill: #d68f49;
         }
         100% {
             fill: #c5d11b;
@@ -1218,7 +1201,7 @@ p {
         z-index: 2;
         animation:
             heading1 2s,
-            white-text 5s 4s;
+            white-text 10s 4s;
         animation-fill-mode: forwards;
     }
 
@@ -1238,7 +1221,7 @@ p {
         }
 
         50% {
-            color: #fff; 
+            color: #fff;
         }
 
         100% {
@@ -1359,7 +1342,7 @@ p {
     &__heading {
         font-size: 3vw;
         position: absolute;
-        animation: break-message 2s forwards;
+        animation: break-message 1s forwards;
     }
 }
 
@@ -1374,6 +1357,30 @@ p {
     display: block;
     position: relative;
     height: 100vh;
+
+    &__heading1 {
+        font-size: 2.5vw;
+        padding: 1%;
+        position: absolute;
+        left: 3vw;
+        top: 1vw;
+        z-index: 2;
+        animation: heading1 2s;
+        animation-fill-mode: forwards;
+    }
+
+    &__heading2 {
+        font-size: 1.5vw;
+        padding: 2% 1%;
+        position: absolute;
+        left: 3vw;
+        top: 3vw;
+        z-index: 2;
+        opacity: 0;
+        animation: heading1 2s 2s;
+        animation-fill-mode: forwards;
+    }
+
     &__frog {
         width: 10vw;
         left: 45vw;
@@ -1428,6 +1435,30 @@ p {
     display: block;
     position: relative;
     height: 100vh;
+
+    &__heading1 {
+        font-size: 2.5vw;
+        padding: 1%;
+        position: absolute;
+        left: 3vw;
+        top: 2vw;
+        z-index: 2;
+        animation: heading1 2s;
+        animation-fill-mode: forwards;
+    }
+
+    &__heading2 {
+        font-size: 1.5vw;
+        padding: 2% 1%;
+        position: absolute;
+        left: 3vw;
+        top: 5vw;
+        z-index: 2;
+        opacity: 0;
+        animation: heading1 2s 2s;
+        animation-fill-mode: forwards;
+    }
+
     &__action-button {
         display: none;
         position: fixed;
@@ -1448,13 +1479,13 @@ p {
 .cat-walk {
     display: block;
     position: relative;
-    height: 100vh;
+    height: 120vh;
 
     &__heading1 {
         font-size: 2.5vw;
         position: absolute;
         padding: 5%;
-        top: 1vw;
+        top: 6vw;
         left: 1vw;
         z-index: 3;
         opacity: 0;
@@ -1468,7 +1499,7 @@ p {
         font-size: 1.5vw;
         position: absolute;
         padding: 5%;
-        top: 5vw;
+        top: 10vw;
         left: 1vw;
         z-index: 3;
         opacity: 0;
@@ -1491,7 +1522,7 @@ p {
     &__moon {
         width: 20vh;
         left: 80vw;
-        top: 0vw;
+        top: 5vw;
         position: absolute;
     }
     &__cat--walk {
@@ -1546,17 +1577,28 @@ p {
     display: block;
     position: relative;
     height: 100vh;
+
+    &__heading1 {
+        font-size: 2.2vw;
+        position: absolute;
+        top: 5vw;
+        left: 1vw;
+        z-index: 3;
+        opacity: 0;
+        animation: heading1 2s;
+        animation-fill-mode: forwards;
+    }
     &__frog {
         width: 30vw;
         left: 50vw;
-        top: 23vw;
+        top: 18vw;
         position: absolute;
         animation: bounce2 3s 0.5s infinite; /* Using 'infinite' to repeat indefinitely */
     }
     &__15 {
-        width: 40vw;
+        width: 32vw;
         left: -40vw; /* Initially position the element outside the viewport */
-        top: 10vw;
+        top: 12vw;
         position: absolute;
         animation: slideInFromLeft 1.5s forwards; /* Apply the animation */
     }
@@ -1571,8 +1613,9 @@ p {
     }
     &__text {
         position: absolute;
-        top: 44vw;
+        top: 40vw;
         left: 5vw;
         animation: slideInFromLeft 2s forwards;
+        color: black;
     }
 }
