@@ -136,14 +136,6 @@ p {
         }
     }
 
-<<<<<<< HEAD
-    &__pond-leaf {
-        position: absolute;
-        width: 12vw;
-        left: 42vw;
-        top: 11vw;
-        animation: fadeIn 2s 1s ease forward;
-=======
     @keyframes enter-frog2 {
         0% {
             transform: translateX(200%);
@@ -159,7 +151,6 @@ p {
             transform: translate(0);
             opacity: 1;
         }
->>>>>>> cf560e536339da17d5f0a1002381f81424b662f1
     }
 
     @keyframes enter-frog3 {
@@ -350,22 +341,14 @@ p {
             transform: translateX(1800px) translateY(0);
         }
         100% {
-<<<<<<< HEAD
-            transform: translateX(-200px) translateY(100px); /* Adjust values to fit your arch */
-=======
           transform: translateX(-200px) translateY(100px);
->>>>>>> cf560e536339da17d5f0a1002381f81424b662f1
         }
     }
 
     &__bird {
         width: 10vw;
         left: -10vw;
-<<<<<<< HEAD
-        animation: moveArch 5s forwards; /* Adjust duration as needed */
-=======
         animation: moveArch 5s forwards linear;
->>>>>>> cf560e536339da17d5f0a1002381f81424b662f1
     }
 }
 
