@@ -42,39 +42,180 @@ p {
     position: relative;
     height: 100vh;
 
-    &__frog {
-        position: absolute;
-        width: 10vw;
-        left: 43vw;
-        top: 15vw;
-        z-index: 1;
-        opacity: 0;
-        animation: fadeIn 2s 1s ease forwards; /*Fade in animation for frog after 1 second delay */
+    h2 {
+        text-align: center;
     }
 
-    @keyframes fadeIn {
-        from {
+    // frog 1 enter from the left
+    &__frog--1 {
+        position: absolute;
+        width: 10vw;
+        left: 10vw;
+        top: 30vw;
+        z-index: 1;
+        opacity: 0;
+        animation:
+            enter-frog1 1s 1s,
+            bounce1 1.5s 6s infinite;
+        animation-fill-mode: forwards;
+    }
+
+    // forg 2, 3 and 4 enter from the right 
+    &__frog--2 {
+        position: absolute;
+        width: 10vw;
+        left: 80vw;
+        top: 30vw;
+        z-index: 2;
+        opacity: 0;
+        animation:
+            enter-frog2 2s 3s,
+            bounce2 1.3s 5s infinite;
+        animation-fill-mode: forwards;
+    }
+
+    &__frog--3 {
+        position: absolute;
+        width: 10vw;
+        left: 75vw;
+        top: 30vw;
+        z-index: 2;
+        opacity: 0;
+        animation:
+            enter-frog3 1s 2.5s,
+            bounce1 1s 4.5s infinite;
+        animation-fill-mode: forwards;
+    }
+
+    &__frog--4 {
+        position: absolute;
+        width: 10vw;
+        left: 40vw;
+        top: 30vw;
+        z-index: 1;
+        opacity: 0;
+        animation:
+            enter-frog4 1s 1s,
+            bounce2 ;
+        animation-fill-mode: forwards;
+    }
+
+    // forg 5 enter from the left
+    &__frog--5 {
+        position: absolute;
+        width: 10vw;
+        left: 15vw;
+        top: 30vw;
+        z-index: 1;
+        opacity: 0;
+        animation:
+            enter-frog5 2s 3s,
+            bounce2 ;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes enter-frog1 {
+        0% {
+            transform: translateX(0);
             opacity: 0;
         }
-        to {
+
+        20% {
+            opacity: 1;
+            transform: translateX(100%) translateY(-200%);
+        }
+
+        100% {
+            transform: translate(100%);
             opacity: 1;
         }
     }
 
-   
+    @keyframes enter-frog2 {
+        0% {
+            transform: translateX(200%);
+            opacity: 0;
+        }
 
-    &__pond-leaf {
-        position: absolute;
-        width: 12vw;
-        left: 42vw;
-        top: 11vw;
-        animation: fadeIn 2s 1s ease forward;
+        20% {
+            opacity: 1;
+            transform: translateX(0) translateY(-150%);
+        }
+
+        100% {
+            transform: translate(0);
+            opacity: 1;
+        }
     }
+
+    @keyframes enter-frog3 {
+        0% {
+            transform: translateX(200%);
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+            transform: translateX(0) translateY(-100%);
+        }
+
+        100% {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes enter-frog4 {
+        0% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+            transform: translateX(200%) translateY(-100%);
+        }
+
+        100% {
+            transform: translate(0);
+            opacity: 1;
+        }
+    }
+
+    @keyframes enter-frog5 {
+        0% {
+            transform: translateX(0);
+            opacity: 0;
+        }
+
+        20% {
+            opacity: 1;
+            transform: translateX(200%) translateY(-100%);
+        }
+
+        100% {
+            transform: translate(200%);
+            opacity: 1;
+        }
+    }
+
+    // @keyframes fadeIn {
+    //     from {
+    //         opacity: 0;
+    //     }
+    //     to {
+    //         opacity: 1;
+    //     }
+    // }
 }
 
 .ecosystem {
     position: relative;
     height: 100vh;
+
+    h2 {
+        text-align: center;
+    }
 
     &__frog--apear {
         position: absolute;
@@ -114,8 +255,8 @@ p {
     &__algae1 {
         position: absolute;
         width: 5vw;
-        top: 22vw;
-        right: 18vw;
+        top: 24vw;
+        right: 35vw;
         opacity: 1;
         animation: fadeOut 0.5s 4s ease-in-out forwards;
     }
@@ -124,9 +265,19 @@ p {
         position: absolute;
         top: 24vw;
         width: 10vw;
-        right: 60vw;
+        right: 63vw;
         opacity: 1;
-        animation: fadeOut 0.5s 2s ease-in-out forwards;
+        transform: rotate(140deg);
+        animation: fadeOut 0.5s 3s ease-in-out forwards;
+    }
+    
+    &__algae3 {
+        position: absolute;
+        top: 30vw;
+        width: 17vw;
+        right: 50vw;
+        opacity: 1;
+        animation: fadeOut 0.5s 5s ease-in-out forwards;
     }
 
     @keyframes flyAround {
@@ -144,6 +295,7 @@ p {
 
     &__mosquito--1 {
         position: absolute;
+        top: 10vh;
         right: 40vw;
         width: 4vh;
         animation: flyAround 7s linear forwards; 
@@ -151,7 +303,7 @@ p {
 
     &__mosquito--2 {
         position: absolute;
-        right: 30vw;
+        right: 20vw;
         width: 4vh;
         animation: flyAround 5s linear forwards; 
     }
@@ -163,19 +315,35 @@ p {
         animation: flyAround 4s linear forwards; 
     }
 
+    &__mosquito--4 {
+        position: absolute;
+        top: 30vh;
+        right: 40vw;
+        width: 4vh;
+        animation: flyAround 5s linear forwards; 
+    }
+
+    &__mosquito--5 {
+        position: absolute;
+        top: 40vh;
+        right: 70vw;
+        width: 4vh;
+        animation: flyAround 6s linear forwards;
+    }
+
     @keyframes moveArch {
         0% {
           transform: translateX(1800px) translateY(0);
         }
         100% {
-          transform: translateX(-200px) translateY(100px); /* Adjust values to fit your arch */
+          transform: translateX(-200px) translateY(100px);
         }
     }
 
     &__bird {
         width: 10vw;
         left: -10vw;
-        animation: moveArch 5s forwards ; /* Adjust duration as needed */
+        animation: moveArch 5s forwards linear;
     }
 }
 
