@@ -27,17 +27,18 @@ p {
 }
 
 .spacer {
-  height: 500px;
-  background-color: rgba(0, 0, 0, 0.5);
+  height: 100px;
 }
 
 .introduction {
   position: relative;
   height: 100vh;
+  padding: 20% 20%;
 }
 .introduction h1 {
   text-align: center;
-  font-size: 5vw;
+  font-size: 7vw;
+  animation: heading1 4s;
 }
 
 .important {
@@ -46,6 +47,8 @@ p {
 }
 .important h2 {
   text-align: center;
+  animation: heading1 2s;
+  padding: 2%;
 }
 .important__frog--1 {
   position: absolute;
@@ -54,7 +57,7 @@ p {
   top: 30vw;
   z-index: 1;
   opacity: 0;
-  animation: enter-frog1 1s 1s, bounce1 1.5s 6s infinite;
+  animation: enter-frog1 1s 1s, bounce-frog1 1.5s 5s infinite;
   animation-fill-mode: forwards;
 }
 .important__frog--2 {
@@ -64,7 +67,7 @@ p {
   top: 30vw;
   z-index: 2;
   opacity: 0;
-  animation: enter-frog2 2s 3s, bounce2 1.3s 5s infinite;
+  animation: enter-frog2 2s 3s, bounce-frog2 1.5s 4s 2 infinite;
   animation-fill-mode: forwards;
 }
 .important__frog--3 {
@@ -74,17 +77,17 @@ p {
   top: 30vw;
   z-index: 2;
   opacity: 0;
-  animation: enter-frog3 1s 2.5s, bounce1 1s 4.5s infinite;
+  animation: enter-frog3 1s 2.5s, bounce-frog3 1.7s 5s infinite;
   animation-fill-mode: forwards;
 }
 .important__frog--4 {
   position: absolute;
   width: 10vw;
-  left: 40vw;
+  left: 10vw;
   top: 30vw;
   z-index: 1;
   opacity: 0;
-  animation: enter-frog4 1s 1s, bounce2;
+  animation: enter-frog4 1s 2.5s, bounce-frog4 1.7s 5s infinite;
   animation-fill-mode: forwards;
 }
 .important__frog--5 {
@@ -94,7 +97,7 @@ p {
   top: 30vw;
   z-index: 1;
   opacity: 0;
-  animation: enter-frog5 2s 3s, bounce2;
+  animation: enter-frog5 2s 3s, bounce-frog5 1.6s 4s infinite;
   animation-fill-mode: forwards;
 }
 @keyframes enter-frog1 {
@@ -167,6 +170,108 @@ p {
     opacity: 1;
   }
 }
+@keyframes bounce-frog1 {
+  0%, 100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-80%);
+    opacity: 1;
+  }
+  15% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+@keyframes bounce-frog2 {
+  0%, 100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  15% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+}
+@keyframes bounce-frog3 {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(0%) translateX(25%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0%) translateX(25%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes bounce-frog4 {
+  0%, 100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-150%);
+    opacity: 1;
+  }
+  15% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-200%);
+    opacity: 1;
+  }
+}
+@keyframes bounce-frog5 {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(0%) translateX(25%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0%) translateX(25%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .ecosystem {
   position: relative;
@@ -174,6 +279,9 @@ p {
 }
 .ecosystem h2 {
   text-align: center;
+  padding: 2%;
+  animation: heading1 2s;
+  padding: 2%;
 }
 .ecosystem__frog--apear {
   position: absolute;
@@ -298,12 +406,12 @@ p {
   font-size: 3vw;
   padding: 20% 20%;
   position: absolute;
-  animation: break-message 2s forwards;
+  animation: break-message 1s forwards;
 }
 
 @keyframes break-message {
   0% {
-    transform: translateX(200%);
+    transform: translateX(100%);
   }
   100% {
     transform: translate(0);
@@ -317,11 +425,11 @@ p {
   font-size: 2.5vw;
   position: absolute;
   padding: 5%;
-  top: 5vw;
+  top: 1vw;
   right: 7vw;
   z-index: 3;
   opacity: 0;
-  animation: heading1 2s 0.5s;
+  animation: heading1 2s;
   animation-fill-mode: forwards;
 }
 @keyframes heading1 {
@@ -522,20 +630,12 @@ p {
   font-size: 2.5vw;
   padding: 5%;
   position: absolute;
-  top: 2vw;
+  top: 1vw;
   right: 2vw;
   z-index: 0;
   opacity: 0;
-  animation: heading2 2s 0.5s;
+  animation: heading1 2s;
   animation-fill-mode: forwards;
-}
-@keyframes heading2 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 .pollution__frog2 {
   width: 10vw;
@@ -691,7 +791,7 @@ p {
   top: 2vw;
   left: 2vw;
   z-index: 1;
-  animation: heading3 2s 2s;
+  animation: heading3 2s;
   animation-fill-mode: forwards;
 }
 @keyframes heading3 {
@@ -918,7 +1018,7 @@ p {
     fill: #9c7373;
   }
   100% {
-    fill: #843b3b;
+    fill: #c55252;
   }
 }
 .disease #cheek--left--sick,
@@ -946,7 +1046,7 @@ p {
     fill: #9fd18f;
   }
   50% {
-    fill: #a2aa46;
+    fill: #d68f49;
   }
   100% {
     fill: #c5d11b;
@@ -968,21 +1068,24 @@ p {
   width: 100%;
   height: 100%;
   background-position: center;
-  animation: background-death 8s 2s;
+  animation: background-death 14s 2s;
   animation-fill-mode: forwards;
 }
 @keyframes background-death {
   0% {
     background-color: transparent;
   }
-  40% {
+  20% {
     background-color: rgba(29, 31, 51, 0.7);
   }
-  60% {
+  40% {
     background-color: rgba(142, 27, 27, 0.7);
   }
-  100% {
+  60% {
     background-color: rgba(29, 31, 51, 0.7);
+  }
+  100% {
+    background-color: transparent;
   }
 }
 .apocalypse__heading4 {
@@ -992,6 +1095,8 @@ p {
   left: 3vw;
   top: 5vw;
   z-index: 2;
+  animation: heading1 2s, white-text 10s 4s;
+  animation-fill-mode: forwards;
 }
 @keyframes heading4 {
   0% {
@@ -999,6 +1104,17 @@ p {
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes white-text {
+  0% {
+    color: #000000;
+  }
+  50% {
+    color: #fff;
+  }
+  100% {
+    color: #000000;
   }
 }
 .apocalypse__heading4-2 {
@@ -1100,7 +1216,7 @@ p {
 .what-can-you-do__heading {
   font-size: 3vw;
   position: absolute;
-  animation: break-message 2s forwards;
+  animation: break-message 1s forwards;
 }
 
 .to-do {
@@ -1112,6 +1228,27 @@ p {
   display: block;
   position: relative;
   height: 100vh;
+}
+.touch-frog__heading1 {
+  font-size: 2.5vw;
+  padding: 1%;
+  position: absolute;
+  left: 3vw;
+  top: 1vw;
+  z-index: 2;
+  animation: heading1 2s;
+  animation-fill-mode: forwards;
+}
+.touch-frog__heading2 {
+  font-size: 1.5vw;
+  padding: 2% 1%;
+  position: absolute;
+  left: 3vw;
+  top: 3vw;
+  z-index: 2;
+  opacity: 0;
+  animation: heading1 2s 2s;
+  animation-fill-mode: forwards;
 }
 .touch-frog__frog {
   width: 10vw;
@@ -1164,6 +1301,27 @@ p {
   position: relative;
   height: 100vh;
 }
+.frog-habitat__heading1 {
+  font-size: 2.5vw;
+  padding: 1%;
+  position: absolute;
+  left: 3vw;
+  top: 2vw;
+  z-index: 2;
+  animation: heading1 2s;
+  animation-fill-mode: forwards;
+}
+.frog-habitat__heading2 {
+  font-size: 1.5vw;
+  padding: 2% 1%;
+  position: absolute;
+  left: 3vw;
+  top: 5vw;
+  z-index: 2;
+  opacity: 0;
+  animation: heading1 2s 2s;
+  animation-fill-mode: forwards;
+}
 .frog-habitat__action-button {
   display: none;
   position: fixed;
@@ -1182,7 +1340,29 @@ p {
 .cat-walk {
   display: block;
   position: relative;
-  height: 100vh;
+  height: 120vh;
+}
+.cat-walk__heading1 {
+  font-size: 2.5vw;
+  position: absolute;
+  padding: 5%;
+  top: 6vw;
+  left: 1vw;
+  z-index: 3;
+  opacity: 0;
+  animation: heading1 2s, white-text 10s 4s;
+  animation-fill-mode: forwards;
+}
+.cat-walk__heading2 {
+  font-size: 1.5vw;
+  position: absolute;
+  padding: 5%;
+  top: 10vw;
+  left: 1vw;
+  z-index: 3;
+  opacity: 0;
+  animation: heading1 2s 2s, white-text 10s 4s;
+  animation-fill-mode: forwards;
 }
 .cat-walk__night {
   position: absolute;
@@ -1191,13 +1371,13 @@ p {
   width: 100%;
   height: 110%;
   background-position: center;
-  animation: night-sky 8s 2s;
+  animation: night-sky 10s 2s;
   animation-fill-mode: forwards;
 }
 .cat-walk__moon {
   width: 20vh;
   left: 80vw;
-  top: 0vw;
+  top: 5vw;
   position: absolute;
 }
 .cat-walk__cat--walk {
@@ -1209,7 +1389,7 @@ p {
   height: 20vh;
   left: 15vw;
   bottom: -10vw;
-  animation: move-cat 5s forwards, fade-out 2s 3s forwards;
+  animation: move-cat 5s forwards, fade-out 2s 4s forwards;
 }
 
 @keyframes move-cat {
@@ -1234,11 +1414,11 @@ p {
   0% {
     background-color: transparent;
   }
-  40% {
+  60% {
     background-color: rgba(29, 31, 51, 0.7);
   }
   100% {
-    background-color: rgba(29, 31, 51, 0.7);
+    background-color: transparent;
   }
 }
 .unsg {
@@ -1246,17 +1426,27 @@ p {
   position: relative;
   height: 100vh;
 }
+.unsg__heading1 {
+  font-size: 2.2vw;
+  position: absolute;
+  top: 5vw;
+  left: 1vw;
+  z-index: 3;
+  opacity: 0;
+  animation: heading1 2s;
+  animation-fill-mode: forwards;
+}
 .unsg__frog {
   width: 30vw;
   left: 50vw;
-  top: 23vw;
+  top: 18vw;
   position: absolute;
   animation: bounce2 3s 0.5s infinite; /* Using 'infinite' to repeat indefinitely */
 }
 .unsg__15 {
-  width: 40vw;
+  width: 32vw;
   left: -40vw; /* Initially position the element outside the viewport */
-  top: 10vw;
+  top: 12vw;
   position: absolute;
   animation: slideInFromLeft 1.5s forwards; /* Apply the animation */
 }
@@ -1270,7 +1460,8 @@ p {
 }
 .unsg__text {
   position: absolute;
-  top: 43vw;
+  top: 40vw;
   left: 5vw;
   animation: slideInFromLeft 2s forwards;
+  color: black;
 }/*# sourceMappingURL=style.css.map */
