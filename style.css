@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
   width: 100%;
@@ -11,6 +16,7 @@ h1,
 h2,
 p {
   font-family: Arial, Helvetica, sans-serif;
+  letter-spacing: 0.1vw;
 }
 
 .emphasized-text {
@@ -158,14 +164,33 @@ p {
   animation: moveArch 5s forwards; /* Adjust duration as needed */
 }
 
+.challenges {
+  height: 100vh;
+  position: relative;
+}
+.challenges__heading {
+  font-size: 3vw;
+  padding: 20% 20%;
+  position: absolute;
+  animation: break-message 2s forwards;
+}
+
+@keyframes break-message {
+  0% {
+    transform: translateX(200%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
 .habitat-loss {
   position: relative;
-  height: 100vh;
+  height: 110vh;
 }
 .habitat-loss__heading1 {
   font-size: 2.5vw;
-  letter-spacing: 0.1vw;
   position: absolute;
+  padding: 5%;
   top: 5vw;
   right: 7vw;
   z-index: 3;
@@ -248,6 +273,26 @@ p {
   opacity: 0;
   animation: enter 0.6s 3s, bounce 1s 5s, escape 0.6s 7s;
   animation-fill-mode: forwards;
+}
+.habitat-loss__frog1 #mouth--s2f1 {
+  animation: changeMouthShocked 3s 6s, changeMouth 1s 8s;
+  animation-fill-mode: forwards;
+}
+@keyframes changeMouthShocked {
+  0% {
+    d: path("M47.64,19.19s15.72,5.62,31.45,0");
+  }
+  100% {
+    d: path("M64.64,44.68s-17.68,-15.49,-31.45,0A25,25 0 1,1 96.14 44.68s-17.68,15.49,-31.45,0Z");
+  }
+}
+@keyframes changeMouth {
+  0% {
+    d: path("M47.64,19.19s15.72,5.62,31.45,0");
+  }
+  100% {
+    d: path("M47.64,19.19s15.72,-5.62,31.45,0");
+  }
 }
 @keyframes enter {
   0% {
@@ -343,40 +388,20 @@ p {
   }
 }
 
-#mouth--s2f1 {
-  animation: changeMouthShocked 3s 7s, changeMouth 1s 10s;
-  animation-fill-mode: forwards;
-}
-
-@keyframes changeMouthShocked {
-  0% {
-    d: path("M47.64,19.19s15.72,5.62,31.45,0");
-  }
-  100% {
-    d: path("M64.64,44.68s-17.68,-15.49,-31.45,0A25,25 0 1,1 96.14 44.68s-17.68,15.49,-31.45,0Z");
-  }
-}
-@keyframes changeMouth {
-  0% {
-    d: path("M47.64,19.19s15.72,5.62,31.45,0");
-  }
-  100% {
-    d: path("M47.64,19.19s15.72,-5.62,31.45,0");
-  }
-}
 .pollution {
   position: relative;
-  height: 100vh;
+  height: 110vh;
 }
 .pollution__heading2 {
   font-size: 2.5vw;
-  letter-spacing: 0.1vw;
+  padding: 5%;
   position: absolute;
   top: 2vw;
   right: 2vw;
   z-index: 0;
   opacity: 0;
   animation: heading2 2s 0.5s;
+  animation-fill-mode: forwards;
 }
 @keyframes heading2 {
   0% {
@@ -526,6 +551,430 @@ p {
   100% {
     fill: #747474;
   }
+}
+
+.disease {
+  position: relative;
+  height: 110vh;
+}
+.disease__heading3 {
+  font-size: 2.5vw;
+  padding: 5%;
+  opacity: 0;
+  position: absolute;
+  top: 2vw;
+  left: 2vw;
+  z-index: 1;
+  animation: heading3 2s 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes heading3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.disease__frog3 {
+  width: 10vw;
+  position: absolute;
+  left: 25vw;
+  top: 30vw;
+  z-index: 1;
+  opacity: 0;
+  animation: enter3 1s 5s, bounce3 1.7s 10s infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes enter3 {
+  0% {
+    transform: translateX(-400%);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 1;
+    transform: translateX(-300%) translateY(-200%);
+  }
+  40% {
+    opacity: 1;
+    transform: translateX(-200%) translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(-100%) translateY(-200%);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes bounce3 {
+  0% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  15% {
+    transform: translateY(0%) translateX(25%);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(0%) translateX(25%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.disease__sick1 {
+  width: 10vw;
+  position: absolute;
+  left: 40vw;
+  top: 30vw;
+  z-index: 1;
+  opacity: 0;
+  animation: enter-sick1 1s 1s, bounce2 1.5s 6s infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes enter-sick1 {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0) translateY(-200%);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+.disease__sick2 {
+  width: 10vw;
+  position: absolute;
+  left: 55vw;
+  top: 30vw;
+  z-index: 2;
+  opacity: 0;
+  animation: enter-sick2 1.5s 3s, bounce4 1.7s 5s infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes enter-sick2 {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0) translateY(-300%);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+@keyframes bounce4 {
+  0%, 100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+  5% {
+    transform: translateY(-150%);
+    opacity: 1;
+  }
+  15% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(0%);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-200%);
+    opacity: 1;
+  }
+}
+.disease__sick3 {
+  width: 10vw;
+  position: absolute;
+  left: 67vw;
+  top: 30vw;
+  z-index: 2;
+  opacity: 0;
+  animation: enter-sick3 1s 2s, bounce 1.4s 5s infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes enter-sick3 {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0) translateY(-400%);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+.disease__sick4 {
+  width: 10vw;
+  position: absolute;
+  left: 75vw;
+  top: 30vw;
+  z-index: 2;
+  opacity: 0;
+  animation: enter-sick4 1s 2.5s, bounce4 1s 4.5s infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes enter-sick4 {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0) translateY(-100%);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+.disease__sick5 {
+  width: 10vw;
+  position: absolute;
+  left: 80vw;
+  top: 30vw;
+  z-index: 2;
+  opacity: 0;
+  animation: enter-sick4 2s 3s, bounce4 1.3s 5s infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes enter-sick5 {
+  0% {
+    transform: translateX(200%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(0) translateY(-150%);
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+.disease #eye--left--sick,
+.disease #eye--right--sick {
+  animation: eyeColorChangeSick 1s 8s;
+  animation-fill-mode: forwards;
+}
+@keyframes eyeColorChangeSick {
+  0% {
+    fill: #fff;
+  }
+  50% {
+    fill: #9c7373;
+  }
+  100% {
+    fill: #843b3b;
+  }
+}
+.disease #cheek--left--sick,
+.disease #cheek--right--sick {
+  animation: cheekChangeSick 0.5s 9s;
+  animation-fill-mode: forwards;
+}
+@keyframes cheekChangeSick {
+  0% {
+    fill: #fff;
+  }
+  50% {
+    fill: #9c7373;
+  }
+  100% {
+    fill: #dd5827;
+  }
+}
+.disease #body--sick {
+  animation: bodyColorChangeSick 2s 9s;
+  animation-fill-mode: forwards;
+}
+@keyframes bodyColorChangeSick {
+  0% {
+    fill: #9fd18f;
+  }
+  50% {
+    fill: #a2aa46;
+  }
+  100% {
+    fill: #c5d11b;
+  }
+}
+.disease #mouth--s2f3 {
+  animation: changeMouth 2s 10s;
+  animation-fill-mode: forwards;
+}
+
+.apocalypse {
+  position: relative;
+  height: 110vh;
+}
+.apocalypse__background-change {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  animation: background-death 8s 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes background-death {
+  0% {
+    background-color: transparent;
+  }
+  40% {
+    background-color: rgba(29, 31, 51, 0.7);
+  }
+  60% {
+    background-color: rgba(142, 27, 27, 0.7);
+  }
+  100% {
+    background-color: rgba(29, 31, 51, 0.7);
+  }
+}
+.apocalypse__heading4 {
+  font-size: 2.5vw;
+  padding: 1%;
+  position: absolute;
+  left: 3vw;
+  top: 5vw;
+  z-index: 2;
+}
+@keyframes heading4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.apocalypse__heading4-2 {
+  animation: apocalypse 1s 2s;
+  animation-fill-mode: forwards;
+  font-family: sans-serif;
+  font-size: 7em;
+  text-align: center;
+  padding: 0 100px;
+  opacity: 0;
+  position: absolute;
+  top: 10vw;
+  z-index: 2;
+}
+@keyframes apocalypse {
+  0% {
+    opacity: 0;
+    transform: translateX(-300%);
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+.apocalypse__dead-frog1 {
+  opacity: 0;
+  width: 10vw;
+  position: absolute;
+  left: 10vw;
+  z-index: 3;
+  animation: dead-frog 7s 4s 1 forwards;
+}
+.apocalypse__dead-frog2 {
+  opacity: 0;
+  width: 10vw;
+  position: absolute;
+  left: 25vw;
+  z-index: 1;
+  animation: dead-frog 12s 4s 1 forwards;
+}
+.apocalypse__dead-frog3 {
+  opacity: 0;
+  width: 10vw;
+  position: absolute;
+  left: 40vw;
+  z-index: 3;
+  animation: dead-frog 6s 4s 1 forwards;
+}
+.apocalypse__dead-frog4 {
+  opacity: 0;
+  width: 10vw;
+  position: absolute;
+  left: 55vw;
+  z-index: 3;
+  animation: dead-frog 9s 4s 1 forwards;
+}
+.apocalypse__dead-frog5 {
+  opacity: 0;
+  width: 10vw;
+  position: absolute;
+  left: 65vw;
+  z-index: 1;
+  animation: dead-frog 7s 4s 1 forwards;
+}
+.apocalypse__dead-frog6 {
+  opacity: 0;
+  width: 10vw;
+  position: absolute;
+  left: 80vw;
+  z-index: 3;
+  animation: dead-frog 10s 4s 1 forwards;
+}
+@keyframes dead-frog {
+  0% {
+    opacity: 0;
+    transform: translateY(-100);
+  }
+  5% {
+    opacity: 1;
+  }
+  99% {
+    opacity: 1;
+    transform: translateY(500%) rotate(360deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(1000%);
+  }
+}
+
+.what-can-you-do {
+  height: 100vh;
+  position: relative;
+  padding: 20% 30%;
+}
+.what-can-you-do__heading {
+  font-size: 3vw;
+  position: absolute;
+  animation: break-message 2s forwards;
 }
 
 .to-do {
