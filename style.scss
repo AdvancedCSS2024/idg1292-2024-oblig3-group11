@@ -28,18 +28,20 @@ p {
 }
 
 .spacer {
-    height: 500px;
-    background-color: rgba($color: #000000, $alpha: 0.5);
+    height: 250px;
+    // background-color: rgba($color: #000000, $alpha: 0.5);
 }
 
 //SANNA
 .introduction {
     position: relative;
     height: 100vh;
+    padding: 20% 20%;
 
     h1 {
         text-align: center;
-        font-size: 5vw;
+        font-size: 7vw;
+        animation: heading1 3s;
     }
 }
 
@@ -49,6 +51,8 @@ p {
 
     h2 {
         text-align: center;
+        animation: heading1 2s;
+        padding: 2%;
     }
 
     // frog 1 enter from the left
@@ -228,6 +232,9 @@ p {
 
     h2 {
         text-align: center;
+        padding: 2%;
+        animation: heading1 2s;
+        padding: 2%;
     }
 
     &__frog--apear {
@@ -376,7 +383,7 @@ p {
 
 @keyframes break-message {
     0% {
-        transform: translateX(200%);
+        transform: translateX(100%);
     }
 
     100% {
@@ -396,7 +403,7 @@ p {
         right: 7vw;
         z-index: 3;
         opacity: 0;
-        animation: heading1 2s 0.5s;
+        animation: heading1 2s;
         animation-fill-mode: forwards;
     }
 
@@ -630,7 +637,6 @@ p {
     height: 110vh;
 
     &__heading2 {
-        // font-family: sans-serif;
         font-size: 2.5vw;
         padding: 5%;
         position: absolute;
@@ -638,7 +644,7 @@ p {
         right: 2vw;
         z-index: 0;
         opacity: 0;
-        animation: heading2 2s 0.5s;
+        animation: heading2 2s;
         animation-fill-mode: forwards;
     }
 
@@ -836,7 +842,7 @@ p {
         top: 2vw;
         left: 2vw;
         z-index: 1;
-        animation: heading3 2s 2s;
+        animation: heading3 2s;
         animation-fill-mode: forwards;
     }
 
@@ -1177,7 +1183,7 @@ p {
         width: 100%;
         height: 100%;
         background-position: center;
-        animation: background-death 8s 2s;
+        animation: background-death 14s 2s;
         animation-fill-mode: forwards;
     }
 
@@ -1186,16 +1192,20 @@ p {
             background-color: transparent;
         }
 
-        40% {
+        20% {
             background-color: rgba($color: #1d1f33, $alpha: 0.7);
         }
 
-        60% {
+        40% {
             background-color: rgba($color: #8e1b1b, $alpha: 0.7);
         }
 
-        100% {
+        60% {
             background-color: rgba($color: #1d1f33, $alpha: 0.7);
+        }
+
+        100% {
+            background-color: transparent;
         }
     }
 
@@ -1206,6 +1216,10 @@ p {
         left: 3vw;
         top: 5vw;
         z-index: 2;
+        animation:
+            heading1 2s,
+            white-text 5s 4s;
+        animation-fill-mode: forwards;
     }
 
     @keyframes heading4 {
@@ -1215,6 +1229,20 @@ p {
 
         100% {
             opacity: 1;
+        }
+    }
+
+    @keyframes white-text {
+        0% {
+            color: #000000;
+        }
+
+        50% {
+            color: #fff; 
+        }
+
+        100% {
+            color: #000000;
         }
     }
 
@@ -1421,6 +1449,35 @@ p {
     display: block;
     position: relative;
     height: 100vh;
+
+    &__heading1 {
+        font-size: 2.5vw;
+        position: absolute;
+        padding: 5%;
+        top: 1vw;
+        left: 1vw;
+        z-index: 3;
+        opacity: 0;
+        animation:
+            heading1 2s,
+            white-text 10s 4s;
+        animation-fill-mode: forwards;
+    }
+
+    &__heading2 {
+        font-size: 1.5vw;
+        position: absolute;
+        padding: 5%;
+        top: 5vw;
+        left: 1vw;
+        z-index: 3;
+        opacity: 0;
+        animation:
+            heading1 2s 2s,
+            white-text 10s 4s;
+        animation-fill-mode: forwards;
+    }
+
     &__night {
         position: absolute;
         top: 0;
@@ -1428,7 +1485,7 @@ p {
         width: 100%;
         height: 110%;
         background-position: center;
-        animation: night-sky 8s 2s;
+        animation: night-sky 10s 2s;
         animation-fill-mode: forwards;
     }
     &__moon {
@@ -1448,7 +1505,7 @@ p {
         bottom: -10vw; // Start position off the bottom
         animation:
             move-cat 5s forwards,
-            fade-out 2s 3s forwards; // Chain animations
+            fade-out 2s 4s forwards; // Chain animations
     }
 }
 @keyframes move-cat {
@@ -1476,12 +1533,12 @@ p {
         background-color: transparent;
     }
 
-    40% {
+    60% {
         background-color: rgba($color: #1d1f33, $alpha: 0.7);
     }
 
     100% {
-        background-color: rgba($color: #1d1f33, $alpha: 0.7);
+        background-color: transparent;
     }
 }
 
