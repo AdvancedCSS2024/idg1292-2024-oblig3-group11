@@ -63,11 +63,11 @@ p {
 .important__frog--2 {
   position: absolute;
   width: 10vw;
-  left: 80vw;
+  left: 85vw;
   top: 30vw;
   z-index: 2;
   opacity: 0;
-  animation: enter-frog2 2s 3s, bounce-frog2 1.5s 4s 2 infinite;
+  animation: enter-frog2 2s 3s, bounce-frog2 1.5s 4s infinite;
   animation-fill-mode: forwards;
 }
 .important__frog--3 {
@@ -83,7 +83,7 @@ p {
 .important__frog--4 {
   position: absolute;
   width: 10vw;
-  left: 10vw;
+  left: 25vw;
   top: 30vw;
   z-index: 1;
   opacity: 0;
@@ -110,7 +110,7 @@ p {
     transform: translateX(100%) translateY(-200%);
   }
   100% {
-    transform: translate(100%);
+    transform: translate(0);
     opacity: 1;
   }
 }
@@ -149,7 +149,7 @@ p {
   }
   20% {
     opacity: 1;
-    transform: translateX(200%) translateY(-100%);
+    transform: translateX(100%) translateY(-100%);
   }
   100% {
     transform: translate(0);
@@ -166,7 +166,7 @@ p {
     transform: translateX(200%) translateY(-100%);
   }
   100% {
-    transform: translate(200%);
+    transform: translate(0);
     opacity: 1;
   }
 }
@@ -180,7 +180,7 @@ p {
     opacity: 1;
   }
   15% {
-    transform: translate(0%);
+    transform: translateY(0%);
     opacity: 1;
   }
 }
