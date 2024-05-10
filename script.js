@@ -41,7 +41,7 @@ document.querySelectorAll(".introduction, .important, .ecosystem, .challenges, .
 //Action button
 window.addEventListener("scroll", function() {
   const scrollButton = document.querySelector(".frog-habitat__action-button");
-  if (window.scrollY > 14000 && window.scrollY < 14100) {
+  if (window.scrollY > 10400 && window.scrollY < 10800) {
     scrollButton.classList.add("show");
   } else {
     scrollButton.classList.remove("show");
